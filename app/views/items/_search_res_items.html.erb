@@ -1,0 +1,77 @@
+<% if @res.count > 0 %>
+  <% @res.items.each do |item| %>
+    <div class="searchResults buffer-bottom-sm">
+      <h3><%= search_item_link(item) %></h3>
+      <div class="row">
+        <div class="<%= item["highlight"].present? ? "col-md-4" : "col-md-12" %> search_results_info">
+          <div class="search_results_image">
+            <% if item["image_id"] %>
+              <%= image_tag iiif(item["image_id"]) %>
+            <% else %>
+              <%= image_tag "no_image.jpg" %>
+            <% end %>
+          </div>
+          <ul>
+            <% if item["date_display"].present? %>
+              <li>
+                <%= metadata(item, t("search.results.item.date",
+                  default: "Date"), "date_display", link: false) %>
+              </li>
+            <% end %>
+            <% if item["subcategory"].present? %>
+              <li>
+                <%= metadata(item, t("search.results.item.subcategory",
+                  default: "Subcategory"), "subcategory", link: false) %>
+              </li>
+            <% end %>
+            <%# format can be a multivalued or single keyword field %>
+            <% if item["format"].present? %>
+              <li>
+                <%= metadata(item, t("search.results.item.format",
+                  default: "Format"), "format", link: false) %>
+              </li>
+            <% end %>
+            <%# creator can be a multivalued or single keyword field %>
+            <% if item["creator"].present? %>
+              <li>
+                <%= metadata(item, t("search.results.item.creator",
+                  default: "Creator"), "creator.name", link: false) %>
+              </li>
+            <% end %>
+            <%# source can be a multivalued or single keyword field %>
+            <% if item["source"].present? %>
+              <li>
+                <%= metadata(item, t("search.results.item.source",
+                  default: "Source"), "source", link: false) %>
+              </li>
+            <% end %>
+            <% if item["publisher"].present? %>
+              <li>
+                <%= metadata(item, t("search.results.item.publisher",
+                  default: "Publisher"), "publisher", link: false) %>
+              </li>
+            <% end %>
+            <% if item["rights"].present? %>
+              <li>
+                <%= metadata(item, t("search.results.item.rights",
+                  default: "Rights"), "rights", link: false) %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <% if item["highlight"].present? %>
+          <div class="col-md-8 search_results_text">
+            <% item["highlight"].each do |key, hls| %>
+              <div class="search_results_highlights well">
+                <strong><%= key.titleize %>:</strong>
+                <% hls.each do |hl| %>
+                  <p><%= hl.html_safe %></p>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
