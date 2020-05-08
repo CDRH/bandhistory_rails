@@ -1,0 +1,12 @@
+<%# overridden in order to place the nav over the header image %>
+
+<div id="header" role="banner">
+  <div class="container banner-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <%= render_overridable("layouts/body", "title") %>
+      <%= render_overridable("layouts/body", "languages") %>
+      <%= render_overridable("layouts/body", "navbar") %>
+      <%= render_overridable("layouts/body", "breadcrumbs") %>
+    </nav>
+  </div>
+</div>
