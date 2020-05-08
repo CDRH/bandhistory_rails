@@ -1,3 +1,5 @@
+@import "global/colors";
+
 $bootstrap-sass-asset-helper: false !default;
 //
 // Variables
@@ -18,11 +20,11 @@ $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 $light-base: #d3dbde;
 $light-lighter: lighten($light-base, 11%);
 
-$brand-primary:         #0f2f87 !default; //dark blue
-$brand-success:         #3c9d64 !default; //green old #5A9D76
-$brand-info:            #447984 !default; //blue
-$brand-warning:         #FAE579 !default; //yellow
-$brand-danger:          #D3D7D8 !default; //gray
+$brand-primary:         $primary !default; //dark blue
+$brand-success:         $green !default; //green old #5A9D76
+$brand-info:            $info !default; //blue
+$brand-warning:         $warning !default; //yellow
+$brand-danger:          $danger !default; //gray
 
 $nav-accent:            #f8f8f8 !default;
 

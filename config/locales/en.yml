@@ -22,7 +22,7 @@ en:
     # <title>, meta application-name
     project_shortname: Band History
     # Header subtitle
-    project_subtitle: Template Subtitle
+    # project_subtitle:
 
   #########
   # ABOUT #

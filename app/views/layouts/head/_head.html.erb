@@ -1,0 +1,29 @@
+<%# overridden in order to include
+- google analytics
+- font
+- IE line
+%>
+
+<head>
+  <title>
+    <% if @title.present? %><%= @title %> | <% end %>
+    <%= t "general.project_shortname" %>
+  </title>
+  <%= render_overridable("layouts/head", "meta") %>
+  <%= render_overridable("layouts/head", "favicon") %>
+  <%= render_overridable("layouts/head", "fonts") %>
+  <%= render_overridable("layouts/head", "stylesheets") %>
+  <%= render_overridable("layouts/head", "scripts") %>
+
+  <%# CUSTOM %>
+  <%= render_overridable("layouts/head", "analytics") %>
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Cutive&display=swap" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+    <style>
+      .banner-header {
+        background-color: #000000;
+      }
+    </style>
+  <![endif]-->
+</head>

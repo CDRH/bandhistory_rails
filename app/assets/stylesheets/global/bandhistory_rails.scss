@@ -1,0 +1,400 @@
+@import "colors";
+
+/* ****************** */
+/* General Appearance */
+/* ****************** */
+
+html {
+  background-color: mix($primary,$black,50%);
+}
+
+header {
+  margin-bottom: 1em;
+  text-align:center;
+  background: linear-gradient(0deg, 
+    rgba(mix($primary,$black,0%),0.5) 0%,  
+    rgba(mix($primary,$black,100%),0.5) 100%), 
+    url('../images/content/template/header.jpg') 
+    no-repeat;
+    background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 .navbar-brand {
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  text-shadow: 
+    3px 3px 5px rgba(0, 0, 0, .8), 
+    3px 3px 10px rgba(167, 17, 7, .8),
+    -1px 0px 7px rgba(0, 0, 0, 1);
+  font-family: 'Cinzel', serif;
+  white-space: normal;
+}
+
+.index h1 .navbar-brand {
+  font-size: 1.8em;
+}
+
+.call_text {
+  font-size: 1em;
+  font-weight: 400;
+  font-family: 'Cutive', serif;
+}
+
+.lead {
+  font-weight: 400;
+}
+
+.navbar {
+  display: block;
+}
+
+.navbar-nav {
+  flex-direction:row;
+  justify-content: center;
+  flex-wrap: wrap;
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+.navbar-dark .navbar-nav .nav-item {
+  &.active {
+    background-color: rgba(mix($primary,$black,100%),.8);
+  }
+  &:hover {
+    background-color: rgba(mix($primary,$black,20%),.8);
+  }
+  .nav-link {
+    color: #ffffff;
+  }
+}
+
+.nav-item {
+  background-color: rgba(mix($primary,$black,50%),.8);
+  font-family: 'Cutive', serif;
+  font-size: 1.2em;
+  margin: .1em .4em;
+  padding: .2em .4em 0 .4em;
+}
+
+h1, h2, h3, h4, h4, h5 {
+  font-family: 'Cutive', serif;
+  padding-top: 10px;
+}
+
+h3, h4, h4, h5 {
+  margin-top: 1em;
+}
+
+.flex-item h3, .flex-item h4, .flex-item h4, .flex-item h5 {
+  margin-top: .1em;
+}
+
+a {
+  text-decoration: underline;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+footer {
+  background-color: mix($primary,$black,50%);
+  margin-top: 3em;
+  font-size: 1.2em;
+  text-align: center;
+  img {
+    margin-bottom: 1em;
+  }
+  .bg-footer {
+    background-color: transparent;
+  }
+  .card {
+    border: none;
+  }
+}
+
+.footer {
+  margin-top: 1em;
+  margin-bottom: 4em;
+  padding: 15px;
+  display:block;
+  
+  a {
+    color: $white;
+  }
+}
+
+.logo_container > img {
+  width: 200px;
+}
+
+/* ****************** */
+/*        Home        */
+/* ****************** */
+
+.home_callout {
+  height: 40vh;
+  margin: 2em 0;
+  width: 100%;
+}
+
+.home_callout_1 {
+  background: url('../images/content/template/street.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.callout_inner {
+  background-color: rgba(0,0,0,.6);
+  color: $white;
+  font-size: 1.3em;
+  padding: 1em;
+  width: max-content;
+}
+
+/* ****************** */
+/* Section Navigation */
+/* ****************** */
+
+$dark-overlay: rgba(0,0,0,0.7);
+
+.section-nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+  .section-nav {
+    background-color: $secondary; // Fallback
+    background-position: bottom !important;
+    background-size: cover;
+    border-bottom-width: 20px; // Must come after border-width
+    border-style: solid;
+    color: $dark-overlay; // Without this the border is white (???)
+    //color: $white;
+    display: flex;
+    flex-basis: 1;
+    flex-direction: column;
+    height: 270px;
+    margin: 10px;
+    min-width: 45%;
+    text-decoration: none;
+    width: 45%;
+
+    &:hover {
+      border-color: $primary;
+      & .section-nav-title, & .section-nav-subtitle {
+        background-color: rgba($primary,.9);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .section-nav-container {
+    .section-nav {
+      width: 100%;
+      font-size: .9em;
+    }
+  }
+}
+
+
+.section-nav-title, .section-nav-subtitle {
+  background-color: $dark-overlay;
+  color: $white;
+  display:block;
+  font-size: 1.1em;
+  padding: 5px;
+}
+
+.section-nav-title {
+  font-family: 'Cutive', serif;
+  font-size: 1.4em;
+  margin-bottom: 0;
+}
+
+.section-nav-image {
+  height: 100%;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+// Background photo setting: move these into 
+// their own files once they are all set?
+
+// Default images, alternating by nth child
+
+.section-nav:nth-child(1n) .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/default01.jpg');
+}
+
+.section-nav:nth-child(2n) .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/default02.jpg');
+}
+
+.section-nav:nth-child(3n) .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/default04.jpg');
+}
+
+.section-nav:nth-child(4n) .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/default03.jpg');
+}
+
+// Sights & Sounds
+
+.section-nav.section-nav-multimedia-footage .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/footage.jpg');
+}
+.section-nav.section-nav-multimedia-audio .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/audio.jpg');
+}
+.section-nav.section-nav-multimedia-images .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/images.jpg');
+}
+.section-nav.section-nav-multimedia-documents .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/default02.jpg');
+}
+
+// Sights & Sounds > Audio
+
+.section-nav.section-nav-multimedia-on-parade .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/onparade.jpg');
+}
+.section-nav.section-nav-multimedia-marches .section-nav-image {}
+
+// Sights & Sounds > Images
+
+.section-nav.section-nav-multimedia-sky .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/aerial.jpg');
+}
+.section-nav.section-nav-multimedia-field .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/field.jpg');
+}
+.section-nav.section-nav-multimedia-group .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/group.jpg');
+}
+.section-nav.section-nav-multimedia-parade .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/parade.jpg');
+}
+.section-nav.section-nav-multimedia-people .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/people.jpg');
+}
+
+// Stories
+
+.section-nav.section-nav-stories-march .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/marches.jpg');
+}
+.section-nav.section-nav-stories-lentz .section-nav-image {
+  background-color: #1d1d1d !important;
+  background: url('../images/content/template/nav_backgrounds/lentz.jpg');
+}
+.section-nav.section-nav-stories-johnson .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/johnson.jpg');
+  background-color: #251f1d !important;
+  background-size: contain !important;
+}
+.section-nav.section-nav-stories-steffens .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/steffens.jpg');
+}
+.section-nav.section-nav-stories-fiasco .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/default01.jpg');
+}
+.section-nav.section-nav-stories-uniforms .section-nav-image {
+  background: url('../images/content/template/nav_backgrounds/default01.jpg');
+}
+
+.section-nav-container-pending {
+  .section-nav {
+    &:hover {
+      border-color: $dark-overlay;
+      & .section-nav-title, & .section-nav-subtitle {
+        background-color: $dark-overlay
+      }
+    }
+  }
+}
+
+// Header sizes for smaller screens
+
+@media only screen and (max-width: 830px) {
+  h1 .navbar-brand {
+    font-size: 1em; 
+  }
+  .index h1 .navbar-brand {
+    font-size: 1.2em; 
+  }   
+}
+
+@media only screen and (max-width: 400px) {
+  h1 .navbar-brand {
+    font-size: .8em; 
+  }
+  .index h1 .navbar-brand {
+    font-size: .8em; 
+  } 
+}
+
+// Grid items
+
+a.flex-item {
+  text-decoration: none;
+  h3 {
+    color: #000;
+  }
+  p  {
+    margin: 0 0 .5em 0;
+    padding: 0;
+  }
+  &:hover p {
+    text-decoration: underline;
+  }
+  img {
+    border: solid 2px #000000;
+    display: block; 
+    margin-bottom: .5em;
+  }
+  &:hover img {
+    border-color: $primary;
+  }
+}
+
+// "On Parade"
+.album_gallery {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1.5em;
+}
+
+.album_gallery a {
+  margin-bottom: 1em;
+}
+
+.audio_tracks audio {
+  width: 100%;
+}
+
+.tracks_listing {
+  margin-top: .2em;
+}
+
+.interview-video video {
+  background-color: $gray-300;
+  display: block;
+  height: 540px;
+  margin: 1em auto;
+  max-size: 100%;
+  width: 960px;
+}
