@@ -1,0 +1,66 @@
+<% @ext_css = add_assets(@ext_css, ["simpleLightbox.min"] ) %>
+<% @ext_js = add_assets(@ext_js, ["simpleLightbox.min"] ) %>
+
+<h1>On Parade</h1>
+
+<p>Listen to the band's recording from the early 1950s. Processed by RCA Victor, produced and published by Recorded Publications, Co., and made possible by band fraternity Gamma Lambda.</p>
+
+<p>Recordings provided courtesy of the UNL Band Department</p>
+
+<% tracks = [
+  { title: "The Purple Carnival", filename: "01-the-purple-carnival.mp3" },
+  { title: "March of the Cornhuskers", filename: "02-march-of-the-cornhuskers.mp3" },
+  { title: "Hail Nebraska", filename: "03-hail-nebraska.mp3" },
+  { title: "Thunder and Blazes", filename: "04-thunder-and-blazes.mp3" },
+  { title: "Hail Varsity", filename: "05-hail-varsity.mp3" },
+  { title: "The Cornhusker", filename: "06-the-cornhusker.mp3" },
+  { title: "Chant", filename: "07-chant.mp3" },
+  { title: "Dear Old Nebraska U", filename: "08-dear-old-nebraska-u.mp3" },
+] %>
+
+<div class="card">
+  <div class="card-body">
+    <% tracks.each_with_index do |track, index| %>
+      <div class="row tracks_listing">
+        <div class="col-md-1">
+          <%= index+1 %>
+        </div>
+        <div class="col-md-4">
+          <%= track[:title] %>
+        </div>
+        <div class="col-md-7 audio_tracks">
+          <audio controls preload="none">
+            <% path = "#{PRIVATE["media_path"]}/audio/bandhistory/multimedia/on_parade/#{track[:filename]}" %>
+
+            <source type="audio/mpeg" src="<%= path %>">
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="<%= path %>">link to the audio</a></p>
+          </audio>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% images = [
+  { id: "130815-00031.jpg", label: "On Parade Album, Front Cover" },
+  { id: "130815-00033.jpg", label: "On Parade Album, Inside Cover" },
+  { id: "130815-00034.jpg", label: "On Parade Album, Side 1A" },
+  { id: "130815-00035.jpg", label: "On Parade Album, Side 1B" },
+  { id: "130815-00036.jpg", label: "On Parade Album, Side 2A" },
+  { id: "130815-00037.jpg", label: "On Parade Album, Side 2B" },
+  { id: "130815-00032.jpg", label: "On Parade Album, Back Cover" },
+] %>
+
+<div class="album_gallery">
+  <% images.each do |image| %>
+    <a class="gallery"
+      href="<%= iiif("photographs/#{image[:id]}", size: "!800,800") %>"
+      title="<%= image[:label] %>">
+      <%= image_tag iiif("photographs/#{image[:id]}"), class: "preview", alt: image[:label] %>
+    </a>
+  <% end %>
+</div>
+
+<script>
+  new SimpleLightbox({elements: '.album_gallery .gallery'});
+</script>

@@ -1,0 +1,22 @@
+<h1>Audio</h1>
+
+<p class="lead">Photos of a marching band can only communicate so much about an ensemble, but the music is what sets a band apart from other groups. "On Parade" is remarkable not only because it hails from the mid-20th century, but it also features multiple songs where the band members sang as well as played. The transcript of the 125th anniversary concert provides background for the development of fight songs and notable music of the band for those interested in learning more about their favorite tunes.</p>
+
+<div class="section-nav-container">
+
+  <%= link_to audio_item_path(id: "on_parade"), class: "section-nav section-nav-multimedia section-nav-multimedia-on-parade" do %>
+    <div class="section-nav-title">On Parade</div>
+    <div class="section-nav-subtitle">Earliest known record released by the band</div>
+    <div class="section-nav-image"></div>
+  <% end %>
+
+  <%= link_to feature_path(id: "marches"), class: "section-nav section-nav-stories section-nav-stories-march" do %>
+    <div class="section-nav-title">
+      "Marches and Songs of the Cornhuskers"
+    </div>
+    <div class="section-nav-subtitle">
+      125th Anniversary Concert, April 23, 2005
+    </div>
+    <div class="section-nav-image"></div>
+  <% end %>
+</div>

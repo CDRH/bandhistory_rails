@@ -4,6 +4,7 @@ default: &default
   api_path: https://cdrhdev1.unl.edu/api/v1
   # path to iiif server, NOT including the project directory
   iiif_path: https://cdrhmedia.unl.edu/iiif/2
+  media_path: https://cdrhmedia.unl.edu
 
 test:
   <<: *default
