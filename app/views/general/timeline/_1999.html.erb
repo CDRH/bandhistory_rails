@@ -1,0 +1,47 @@
+<div class="timeline-article">
+  <div class="meta-date">
+    <span class="date">1999</span>
+  </div>
+  <%= render layout: "general/timeline/element", locals: {
+    direction: "left",
+    title: "Front Ensemble Added",
+    id: "pit",
+    image: "mb016.jpg",
+    image_caption: "The first front ensemble",
+    image_attr: "Photo Credit: Tony Falcone, used with permission of the UNL Bands",
+    image_link: "mb016" } do %>
+    <p>
+      A marching band's front ensemble, often called a "pit," is composed of musicians who do not march with their instruments. Pits may include marimbas and other mallet percussion, timpani, bass drums, tam tams, amplified (electric) instruments, and smaller percussion instruments like tambourines, cowbells, and splash cymbals.
+    </p>
+    <p>
+      The band was no stranger to glockenspiels and large drums, two lyres and the five foot drum "Big Bertha" having been added to the band in 1932, but the use of that instrumentation had fallen out of use by the end of the 20th century. In 1999, with the attention of the assistant director at the time, Anthony Falcone, a front ensemble was added to the Cornhusker Marching Band which reincorporated those instruments and many more to augment the band's musical versatility.
+    </p>
+
+    <div class="resources">
+      Source
+      <ul>
+        <li>Carstens, Marissa Jo. "Marching Band 'Pride of State,'" <em>The Daily Nebraskan</em>, November 15, 1999.</li>
+
+        <li>Chen, Jeremy. <a href="http://www.halftimemag.com/direct-from/nebraska-cornhusker-marching-band.html">"Nebraska Cornhusker Marching Band,"</a> <em>Halftime Magazine</em> September 20, 2011.</li>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render layout: "general/timeline/element", locals: {
+    direction: "right",
+    title: "March of the Cornhuskers Documentary",
+    id: "documentary",
+    image: nil,
+    image_attr: nil,
+    image_caption: nil,
+    image_link: nil } do %>
+    <p>In 1999, the Nebraska Educational Telecommunications station released a documentary on the marching band which gave viewers a window into the audition process, rigorous rehearsals, and "rare audio and video highlights of band performances."</p>
+
+    <div class="resources">
+      Source
+      <ul>
+        <li><a target="_blank" rel="nofollow noopener" href="http://netnebraska.org/basic-page/television/march-cornhuskers">"March of the Cornhuskers,"</a> <em>Nebraska Educational Telecommunications</em>, December 1999.</li>
+      </ul>
+    </div>
+  <% end %>
+</div>

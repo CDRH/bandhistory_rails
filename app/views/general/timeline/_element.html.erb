@@ -1,0 +1,62 @@
+<div class="content-container content-<%= direction %>-container">
+  <div class="event content-<%= direction %>">
+ 
+    <h3>
+      <%= title %>
+    </h3>
+
+    <% if image.present? %>
+      <div class="timeline-image">
+        <% title = image_caption %>
+        <% title += "<br/>#{image_attr}" if image_attr %>
+        <% title += "<br/><a href='#{url_for "/multimedia/images/#{image_link}/index.html"}'>View Photo Information</a>" if image_link %>
+        <a class="gallery"
+          href="<%= url_for iiif(image, size: "!800,800") %>"
+          title="<%= title %>">
+          <%= image_tag iiif(image), class: "preview", alt: "#{image_caption} #{image_attr}" %>
+          <span class="timeline-imagecaption">View larger image</span>
+        </a>
+      </div>
+    <% end %>
+
+    <!-- more info -->
+    <button data-toggle="collapse"
+        href="#<%= id %>"
+        role="button"
+        aria-expanded="false"
+        aria-controls="<%= id %>"
+        class=" timeline-collapse">
+      Learn More
+    </button>
+
+    <!-- contents -->
+    <div class="collapse" id="<%= id %>">
+      <div class="timeline-card">
+
+        <button data-toggle="collapse"
+          href="#<%= id %>"
+          role="button"
+          aria-expanded="false"
+          aria-controls="<%= id %>"
+          class="btn btn-secondary">
+          X
+        </button>
+
+        <%= yield %>
+
+        <% if image.present? %>
+          <div class="image_attribution">
+            <% if image_attr %>
+              <%= image_attr %>
+            <% end %>
+            <br/>
+            <% if image_link.present? %>
+              <%= link_to "View Photo Information", "/multimedia/images/#{image_link}/index.html" %>
+            <% end %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

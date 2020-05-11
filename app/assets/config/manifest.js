@@ -6,3 +6,5 @@
 
 // Orchid engine's manifest: orchid/app/assets/config/orchid/manifest.js
 //= link orchid/manifest.js
+//= link simpleLightbox.min.css
+//= link simpleLightbox.min.js

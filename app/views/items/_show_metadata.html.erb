@@ -36,16 +36,16 @@
                      default: "Subcategory"), "subcategory") %>
       </li>
     <% end %>
-    <% if @res["rights"].present? %>
-      <li>
-        <%= metadata(@res, t("item.metadata.rights", default: "Rights"),
-                     "rights", link: false) %>
-      </li>
-    <% end %>
     <% if @res["source"].present? %>
       <li>
         <%= metadata(@res, t("item.metadata.source", default: "Source"),
                      "source", link: false) %>
+      </li>
+    <% end %>
+    <% if @res["rights"].present? %>
+      <li>
+        <%= metadata(@res, t("item.metadata.rights", default: "Rights"),
+                     "rights", link: false) %>
       </li>
     <% end %>
     <%# When copying this template into projects, consider adding rel tag to the source link
