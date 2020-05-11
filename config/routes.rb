@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   get "multimedia", to: "multimedia#index", as: "multimedia"
 
   get "stories", to: "stories#index", as: "stories"
-
+  get "stories/accounts", to: "stories#accounts", as: "accounts"
+  get "stories/accounts/:id", to: "stories#account", as: "account"
+  get "stories/features", to: "stories#features", as: "features"
+  get "stories/features/:id", to: "stories#feature", as: "feature"
 end

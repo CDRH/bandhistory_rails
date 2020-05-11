@@ -41,8 +41,10 @@ img {
   white-space: normal;
 }
 
-.site_home .h1 .navbar-brand {
-  font-size: 1.8em;
+/* copying in styles for bg-light cards from bs4 */
+
+.bg-light {
+  background-color: #fff !important;
 }
 
 .call_text {
@@ -51,8 +53,30 @@ img {
   font-family: 'Cutive', serif;
 }
 
+.card {
+  background-clip: border-box;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.125);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+}
+
 .lead {
   font-weight: 400;
+  font-size: 20px;
+}
+
+.site_home .lead {
+  font-size: 24px;
 }
 
 .navbar {
@@ -172,6 +196,10 @@ footer {
   font-size: 1.3em;
   padding: 1em;
   width: max-content;
+}
+
+.site_home .h1 .navbar-brand {
+  font-size: 1.8em;
 }
 
 /* ****************** */
@@ -305,9 +333,23 @@ $dark-overlay: rgba(0,0,0,0.7);
 
 // Stories
 
+.section-nav.section-nav-stories-interviews .section-nav-image {
+  background-color: #1d1d1d !important;
+  background: image-url('nav_backgrounds/lentz.jpg');
+}
+
+.section-nav.section-nav-stories-features .section-nav-image {
+  background: image-url('nav_backgrounds/marches.jpg');
+}
+
+// Stories > Features
+
 .section-nav.section-nav-stories-march .section-nav-image {
   background: image-url('nav_backgrounds/marches.jpg');
 }
+
+// Stories > Interviews
+
 .section-nav.section-nav-stories-lentz .section-nav-image {
   background-color: #1d1d1d !important;
   background: image-url('nav_backgrounds/lentz.jpg');
@@ -319,12 +361,6 @@ $dark-overlay: rgba(0,0,0,0.7);
 }
 .section-nav.section-nav-stories-steffens .section-nav-image {
   background: image-url('nav_backgrounds/steffens.jpg');
-}
-.section-nav.section-nav-stories-fiasco .section-nav-image {
-  background: image-url('nav_backgrounds/default01.jpg');
-}
-.section-nav.section-nav-stories-uniforms .section-nav-image {
-  background: image-url('nav_backgrounds/default01.jpg');
 }
 
 .section-nav-container-pending {
