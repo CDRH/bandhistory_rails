@@ -50,8 +50,9 @@
 </div>
 
 <div class="interview-video">
-  <video controls preload="none" poster="../../images/video_thumbs/johnson_interview_2019_preview.jpg">
-    <% video_link = url_for "../videos/johnson_interview_2019_small.mp4" %>
+  <% preview_img = iiif("website/johnson_interview_2019_preview.jpg") %>
+  <video controls preload="none" poster="<%= preview_img %>">
+    <% video_link = "#{PRIVATE["media_path"]}/video/bandhistory/interviews/johnson_interview_2019_small.mp4" %>
     <source src="<%= video_link %>" type="video/mp4">
     <p>Your browser doesn't support HTML5 video. Here is
        a <%= link_to "link to the video", video_link %> instead.</p>
