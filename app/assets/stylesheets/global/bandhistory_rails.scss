@@ -451,9 +451,9 @@ a.flex-item {
 /* Simple Lightbox */
 /* *************** */
 
-/* TODO I think these are being overwritten by the lightbox rules
-because of load order :/
-*/
+/* have to add specific page class to get this to show up
+   because slbCaption is being set by the lightbox which
+   loads after these styles */
 .action_audio_item .slbCaption {
   background-color: $white;
   color: $black;
