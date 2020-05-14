@@ -315,7 +315,8 @@ $dark-overlay: rgba(0,0,0,0.7);
 
 // Sights & Sounds > Images
 
-.section-nav.section-nav-multimedia-sky .section-nav-image {
+/* TODO remove classes / images or use for other sections */
+/*.section-nav.section-nav-multimedia-sky .section-nav-image {
   background: image-url('nav_backgrounds/aerial.jpg');
 }
 .section-nav.section-nav-multimedia-field .section-nav-image {
@@ -329,7 +330,7 @@ $dark-overlay: rgba(0,0,0,0.7);
 }
 .section-nav.section-nav-multimedia-people .section-nav-image {
   background: image-url('nav_backgrounds/people.jpg');
-}
+}*/
 
 // Stories
 
@@ -459,4 +460,125 @@ a.flex-item {
   color: $black;
   font-size: 1em;
   overflow: visible;
+}
+
+
+/* ********** */
+/* Multimedia */
+/* ********** */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: .5em;
+}
+
+.flex-item {
+  padding: 1em;
+  flex-basis: 260px;
+  flex-grow: 1;
+  max-width: 25%;
+  border: solid 1px $gray-100;
+  background: #fff;
+  h3 {
+    font-size: 1.2em;
+  }
+  ul {
+    margin: .5em 0 0 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  li {
+    line-height: 1.1em;
+    margin-bottom: .4em;
+  }
+  &:hover {
+    background-color: $gray-100;
+  }
+}
+
+.filters-topic button, .filters-decade button {
+  margin: 0 5px 8px 0
+}
+
+.filters-topic h3, .filters-decade h3 {
+  font-size: 1.2em;
+  margin-top: 1em;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+/* ******* */
+/* Footage */
+/* ******* */
+
+.badge {
+  background-color: $secondary;
+  color: $text-color;
+}
+
+video {
+  width: 100%;
+  background-color: $gray-300;
+}
+
+.video-hidden {
+  display: none;
+}
+
+/* ****** */
+/* Images */
+/* ****** */
+
+.image {
+  .gallery {
+    text-decoration: none;
+    img {
+      border: solid 2px $gray-800;
+    }
+    &:hover img {
+      border: $primary 2px solid;
+    }
+    .imagecaption {
+      background: $gray-800;
+      color: #fff;
+      display: block;
+      position: relative; 
+      text-align: center;
+      width: 100%;
+      text-decoration: none;
+    }
+    &:hover .imagecaption {
+      background: $primary;
+    }
+  }
+}
+
+.btn-moreinformation {
+  background: $gray-800;
+  color: #fff;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.image-navbar {
+  display: flex;
+}
+
+.image-navbar .navbar-nav {
+  list-style: none;
+  .nav-item {
+    background-color: $gray-600;
+  }
+  a {
+    color: #fff;
+  }
+  .active {
+    background-color: mix($primary,$black,70%);
+  }
 }

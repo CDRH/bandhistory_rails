@@ -1,0 +1,18 @@
+<%= render "multimedia/images/image_nav" %>
+
+<p class="lead">
+
+  <% if params["topic"].blank? %>
+    The images in this section have been drawn together from half a dozen collections in the University of Nebraska Archives & Special Collections, such as the collections of Don Lentz, Jack Snider, University Communications, ROTC, and Marching Band.
+  <% elsif params["topic"] == "aerial" %>
+    The classic view of a marching band halftime show is from the stands. What better way to see the band's formations and the accompanying card section? More aerial views of the band are available on the TODO <%= link_to "footage", "/multimedia/footage.html" %> page.
+  <% elsif params["topic"] == "field" %>
+    One of the band's most familiar settings is on the football field or in the stands, cheering for the team. In these photos, though uniforms, instrumentation, and membership may vary through the years, it is clear that some traditions change very little.
+  <% elsif params["topic"] == "group" %>
+    The growth in size and instrumentation of the band through the decades is clear through these group photographs. Images which do not feature the marching band have also been provided, such as the Cadets and ROTC which included band members, and groups relevant to the band's history, like early sports teams and other music ensembles.
+  <% elsif params["topic"] == "parade" %>
+    The marching band is no stranger to marking important events with exhibitions and parades. These photographs here offer a glimpse of recurring events of significance to the University at large, like Ivy Day, ROTC Inspection Day, and Commencement, but also mark important single occasions like Pershing Day and specific bowl parades.
+  <% elsif params["topic"] == "people" %>
+    The following images have a range of settings, from studio portraits to staged publicity shots to candid moments in rehearsals, but they share the thread of focusing on specific individuals. Browsing through the years, the band's uniform is a testament to the band's evolution, from military garments to bright stylings.
+  <% end %>
+</p>

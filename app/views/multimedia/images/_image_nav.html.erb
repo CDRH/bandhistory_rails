@@ -1,0 +1,15 @@
+<div class="image-navbar">
+  <ul class="navbar-nav">
+    <li class="nav-item <%= 'active' if params["topic"].blank? %>">
+      <%= link_to "All", images_path %>
+    </li>
+    <% @facets.facets["topics"].each do |facet| %>
+      <%# TODO remove once documents are elsewhere %>
+      <% next if facet[0] == "documents" %>
+      <% active = "active" if facet[0] == params["topic"] %>
+      <li class="nav-item <%= active %>">
+        <%= link_to facet[0].titleize, image_topic_path(topic: facet[0]) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

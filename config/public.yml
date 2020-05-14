@@ -62,12 +62,12 @@ default: &default
 
   facets:
     en:
-      collection:
-        label: Collection
-        flags:
-          - search_filter
       category:
         label: Category
+        flags:
+          - search_filter
+      subcategory:
+        label: Subcategory
         flags:
           - search_filter
       date.year:
@@ -78,20 +78,20 @@ default: &default
         label: People
         flags:
           - search_filter
-      subcategory:
-        label: Subcategory
-        flags:
-          - search_filter
-      creator.name:
-        label: Creator
+      repository:
+        label: Repository
         flags:
           - search_filter
       format:
         label: Format
         flags:
           - search_filter
-      places:
-        label: Places
+      keywords:
+        label: Keyword
+        flags:
+          - search_filter
+      topics:
+        label: Topic
         flags:
           - search_filter
 

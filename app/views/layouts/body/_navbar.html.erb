@@ -10,9 +10,6 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav mr-auto">
-        <li class="<%= active?(home_path) %> nav-item">
-          <%= link_to t("home.title", default: "Home"), :home, class: "nav-link" %>
-        </li>
         <li class="<%= active?(/^#{config.relative_url_root}\/multimedia/,request.path) %> nav-item">
           <%= link_to "Sights & Sounds", :multimedia, class: "nav-link" %>
         </li>

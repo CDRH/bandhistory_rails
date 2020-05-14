@@ -1,0 +1,37 @@
+<% @ext_css = add_assets(@ext_css, ["simpleLightbox.min", "timeline"] ) %>
+<% @ext_js = add_assets(@ext_js, ["simpleLightbox.min"] ) %>
+
+<div class="images-container flex-container">
+  <% images.each do |image| %>
+    <% link = image_url(id: image["identifier"]) %>
+
+    <div class="image flex-item">
+      <% label = "#{image["title"]}<br/><a href='#{link}' target='blank' rel='nofollow noopener'>View More Information</a>" %>
+
+      <% year = image["date"].present? ? image["date"][0,4] : "undated" %>
+      <h3><%= image["title"] %> (<%= year %>)</h3>
+
+      <a class="gallery"
+        href="<%= iiif(image["image_id"], size: "!800,800") %>"
+        title="<%= label %>">
+        <%= image_tag iiif(image["image_id"]), class: "thumbnail", alt: image["title"] %>
+        <span class="imagecaption">View larger image</span>
+      </a>
+
+      <ul>
+        <% if image["date"].present? %>
+          <li><strong>Date:</strong> <%= image["date_display"] %></li>
+        <% end %>
+        <li><strong>Desc:</strong> <%= image["description"] %></li>
+        <li><strong>Collection:</strong> <%= image["source"] %></li>
+        <li><strong>ID:</strong> <%= image["identifier"] %></li>
+      </ul>
+    
+     <%= link_to "View More Information", link, class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
+  </div>
+  <% end %>
+</div>
+
+<script>
+  new SimpleLightbox({elements: '.gallery'});
+</script>
