@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "multimedia/images/:topic", to: "multimedia#images", as: "image_topic",
     topic: /(aerial|field|group|parade|people)/
   get "multimedia/images/:id", to: "multimedia#image", as: "image"
+  get "multimedia/footage", to: "multimedia#footage", as: "footage"
 
   # stories
   get "stories", to: "stories#index", as: "stories"

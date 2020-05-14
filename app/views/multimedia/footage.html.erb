@@ -1,0 +1,86 @@
+<%= stylesheet_link_tag "multimedia" %>
+
+<h2>Footage</h2>
+
+<p>The digitization of the footage below was made possible through the generous support of Gary Steffens, the Band Alumni Association, and the Center for Digital Research in the Humanities. Longer reels were split up into shorter clips to allow browsing by topic. For this reason not all of the clips contain footage of the band, but may have been part of a reel with footage of the band members in an earlier or later portion.</p>
+
+<p>Browsing this silent film through the decades, the change to drill styles is particularly noticeable. Also present are the alterations to Memorial Stadium and traditions such as the card section.</p>
+
+<div class="filters">
+  <div class="filters-topic">
+    <h3>Filter Projects by Topic:</h3>
+
+    <% @facets.facets["keywords"].each do |keyword, num| %>
+      <% link_class = "btn btn-filter btn-primary" %>
+      <% link_class += "active" if facet_selected?("keywords", keyword) %>
+      <%= link_to footage_path({ "f" => ["keywords|#{keyword}"] }), class: link_class do %>
+        <%= keyword.titleize %> <span class="badge"><%= num %></span>
+      <% end %>
+    <% end %>
+    <%= link_to :footage, class: "btn btn-filter btn-warning" do %>
+      Clear filter <span class="badge">X</span>
+    <% end %>
+  </div>
+</div>
+
+<%= render_overridable "items", "sort_and_page_ui" %>
+
+<div class="videos-container flex-container">
+  <% @res.items.each do |item| %>
+    <% html_id = item["identifier"].gsub(".", "") %>
+    <% year = item["date"].present? ? item["date"][0,4] : nil %>
+    <% decade = year ? "#{year[0,3]}0" : nil %>
+    <button type="button" class="video flex-item" data-toggle="modal" data-target="#<%= html_id %>">
+      <h3><%= year %></h3>
+     
+      <%= image_tag iiif("website/#{item["image_id"]}"), class: "thumbnail" %>
+      <p><%= item["description"] %></p>
+      <p>Reel: TODO <%# item["archives_id"] %></p>
+    </button>
+
+    <!-- Video modal -->
+    <div class="modal fade" id="<%= html_id %>" tabindex="-1" role="dialog"
+      aria-labelledby="<%= html_id %>" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="<%= item["identifier"] %>"><%= year %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <video controls preload="none" poster="<%= iiif("website/#{item["image_id"]}", size: "!500,500") %>">
+              <% video_link = "#{PRIVATE["media_path"]}/video/bandhistory/footage/#{item["identifier"]}.mp4" %>
+              <source src="<%= video_link %>" type="video/mp4">
+              <p>Your browser doesn't support HTML5 video. Here is
+                 a <%= link_to "link to the video", video_link %> instead.</p>
+            </video>
+            <h6>Clip Information</h6>
+            <ul>
+              <li><strong>Date:</strong> <%= item["date_display"] %></li>
+              <li><strong>Reel Seconds:</strong> TODO <%# info["reel_time"] %></li>
+              <li><strong>Description:</strong> <%= item["desc"] %></li>
+            </ul>
+
+            <h6>Reel Information</h6>
+            <ul>
+              <li><strong>Reel:</strong> <%# info["archives_id"] %></li>
+              <li><strong>Format:</strong> <%# info["format"] %></li>
+              <li><strong>Record Group:</strong> <%# info["record_group"] %>, University of Nebraska Archives and Special Collections</li>
+              <li><strong>Reel Description:</strong> <%# info["archives_desc"] %></li>
+              <li><a href="<%# info["commons_link"] %>">Mediacommons Link (external)</a></li>
+              <li><strong>Digitization Sponsor:</strong> <%# info["sponsor"] %></li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-filter btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+<%= render_overridable "items", "sort_and_page_ui" %>
