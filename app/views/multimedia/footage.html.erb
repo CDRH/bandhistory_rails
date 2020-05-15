@@ -36,6 +36,7 @@
       <%= image_tag iiif("website/#{item["image_id"]}"), class: "thumbnail" %>
       <p><%= item["description"] %></p>
       <p>Reel: TODO <%# item["archives_id"] %></p>
+      <%= link_to "View More Information", footage_clip_path(id: ""), class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
     </button>
 
     <!-- Video modal -->
@@ -72,6 +73,8 @@
               <li><a href="<%# info["commons_link"] %>">Mediacommons Link (external)</a></li>
               <li><strong>Digitization Sponsor:</strong> <%# info["sponsor"] %></li>
             </ul>
+      <%= link_to "View More Information", footage_clip_path(id: ""), class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-filter btn-secondary" data-dismiss="modal">Close</button>

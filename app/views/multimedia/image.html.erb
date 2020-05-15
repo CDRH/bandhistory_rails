@@ -15,30 +15,42 @@
   <div class="col-md-3">
     <div class="image_metadata">
       <ul>
-        <li>
-          <%= metadata(@res, t("item.metadata.date_display", default: "Date Display"),
-          "date_display", link: false) %>
-        </li>
-        <li>
-          <%= metadata(@res, t("item.metadata.description", default: "Description"),
-            "description", link: false) %>
-        </li>
-        <li>
-          <%= metadata(@res, t("item.metadata.creators", default: "Author(s)"),
-            "creator.name", link: false) %>
-        </li>
-        <li>
-          <%= metadata(@res, "Image Identifier",
-            "identifier", link: false) %>
-        </li>
-        <li>
-          <%= metadata(@res, t("item.metadata.source", default: "Source"),
-            "source", link: false) %>
-        </li>
-        <li>
-          <%= metadata(@res, t("item.metadata.rights", default: "Rights"),
-          "rights", link: false) %>
-        </li>
+        <% if @res["date_display"].present? %>
+          <li>
+            <%= metadata(@res, t("item.metadata.date_display", default: "Date Display"),
+            "date_display", link: false) %>
+          </li>
+        <% end %>
+        <% if @res["description"].present? %>
+          <li>
+            <%= metadata(@res, t("item.metadata.description", default: "Description"),
+              "description", link: false) %>
+          </li>
+        <% end %>
+        <% if @res["creator"].present? %>
+          <li>
+            <%= metadata(@res, t("item.metadata.creators", default: "Author(s)"),
+              "creator.name", link: false) %>
+          </li>
+        <% end %>
+        <% if @res["identifier"].present? %>
+          <li>
+            <%= metadata(@res, "Image Identifier",
+              "identifier", link: false) %>
+          </li>
+        <% end %>
+        <% if @res["source"].present? %>
+          <li>
+            <%= metadata(@res, t("item.metadata.source", default: "Source"),
+              "source", link: false) %>
+          </li>
+        <% end %>
+        <% if @res["rights"].present? %>
+          <li>
+            <%= metadata(@res, t("item.metadata.rights", default: "Rights"),
+            "rights", link: false) %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

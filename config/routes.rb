@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  with_period = /[^\/]+/
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # general
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
     topic: /(aerial|field|group|parade|people)/
   get "multimedia/images/:id", to: "multimedia#image", as: "image"
   get "multimedia/footage", to: "multimedia#footage", as: "footage"
+  get "multimedia/footage/:id", to: "multimedia#footage_clip",
+    as: "footage_clip", id: with_period
 
   # stories
   get "stories", to: "stories#index", as: "stories"
