@@ -1,6 +1,6 @@
-class MultimediaController < ApplicationController
+ItemsController.class_eval do
 
-  def footage
+  def multimedia_footage
     options = params.permit!.deep_dup
     options["f"] = [] if options["f"].blank?
     options["f"] << "subcategory|Footage"
@@ -17,15 +17,15 @@ class MultimediaController < ApplicationController
     # essentially using search_preset but with my own view
   end
 
-  def footage_clip
+  def multimedia_footage_clip
     item_retrieve(params["id"])
   end
 
-  def image
+  def multimedia_image
     @res = $api.get_item_by_id(params["id"]).first
   end
 
-  def images
+  def multimedia_images
     @title = "Images"
 
     options = params.permit!.deep_dup
@@ -44,26 +44,6 @@ class MultimediaController < ApplicationController
     @res = $api.query(options)
     @route_path = "images_path"
     render_overridable "items", "search_preset"
-  end
-
-  private
-
-  # copied directly from items_controller.rb
-  # modified only to use $api instead of section specific
-  # and to use footage title
-  def item_retrieve(id)
-    @res = $api.get_item_by_id(id).first
-    if @res
-      url = @res["uri_html"]
-      @html = Net::HTTP.get(URI.parse(url)) if url
-      @title = @res["title"]
-
-      render_overridable("items", "show")
-    else
-      @title = t "item.no_item", id: id,
-        default: "No item with identifier #{id} found!"
-      render_overridable("items", "show_not_found", status: 404)
-    end
   end
 
 end

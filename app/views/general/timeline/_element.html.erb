@@ -10,7 +10,7 @@
       <div class="timeline-image">
         <% title = image_caption %>
         <% title += "<br/>#{image_attr}" if image_attr %>
-        <% title += "<br/><a href='#{url_for "/multimedia/images/#{image_link}/index.html"}'>View Photo Information</a>" if image_link %>
+        <% title += "<br/><a href='#{image_path(id: image_link)}'>View Photo Information</a>" if image_link %>
         <a class="gallery"
           href="<%= url_for iiif(img_path, size: "!800,800") %>"
           title="<%= title %>">
@@ -52,7 +52,7 @@
             <% end %>
             <br/>
             <% if image_link.present? %>
-              <%= link_to "View Photo Information", "/multimedia/images/#{image_link}/index.html" %>
+              <%= link_to "View Photo Information", image_path(id: image_link) %>
             <% end %>
           </div>
         <% end %>

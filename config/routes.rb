@@ -6,17 +6,17 @@ Rails.application.routes.draw do
   get "timeline", to: "general#timeline", as: "timeline"
 
   # multimedia
-  get "multimedia", to: "multimedia#index", as: "multimedia"
-  get "multimedia/audio", to: "multimedia#audio", as: "audio"
-  get "multimedia/audio/:id", to: "multimedia#audio_item", as: "audio_item"
-  get "multimedia/documents", to: "multimedia#documents", as: "documents"
-  get "multimedia/images", to: "multimedia#images", as: "images"
+  get "multimedia", to: "items#multimedia", as: "multimedia"
+  get "multimedia/audio", to: "items#multimedia_audio", as: "audio"
+  get "multimedia/audio/:id", to: "items#multimedia_audio_item", as: "audio_item"
+  get "multimedia/documents", to: "items#multimedia_documents", as: "documents"
+  get "multimedia/images", to: "items#multimedia_images", as: "images"
   # note: topic has same path as ID so need constraint on matches
-  get "multimedia/images/:topic", to: "multimedia#images", as: "image_topic",
+  get "multimedia/images/:topic", to: "items#multimedia_images", as: "image_topic",
     topic: /(aerial|field|group|parade|people)/
-  get "multimedia/images/:id", to: "multimedia#image", as: "image"
-  get "multimedia/footage", to: "multimedia#footage", as: "footage"
-  get "multimedia/footage/:id", to: "multimedia#footage_clip",
+  get "multimedia/images/:id", to: "items#multimedia_image", as: "image"
+  get "multimedia/footage", to: "items#multimedia_footage", as: "footage"
+  get "multimedia/footage/:id", to: "items#multimedia_footage_clip",
     as: "footage_clip", id: with_period
 
   # stories
