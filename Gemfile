@@ -61,7 +61,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'orchid', git: 'https://github.com/CDRH/orchid', tag: 'v3.0.1'
+gem 'orchid', git: 'https://github.com/CDRH/orchid', branch: 'search_preset'
 # gem 'orchid', path: '/Users/jdussault2/Desktop/repos/orchid'
 
 gem 'bootstrap-sass', '~> 3.4.1'
