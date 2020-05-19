@@ -8,7 +8,7 @@
             <% if item["image_id"] %>
               <%= image_tag iiif(item["image_id"]) %>
             <% else %>
-              <%= image_tag "no_image.jpg" %>
+              <%= image_tag "no_image.png", size: "150" %>
             <% end %>
           </div>
           <ul>
