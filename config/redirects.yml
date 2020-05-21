@@ -1,0 +1,47 @@
+#############
+## STORIES ##
+#############
+
+-
+  method:     r301
+  from:       /stories/lentz-interview
+  to:         /stories/accounts/lentz
+
+-
+  method:     r301
+  from:       /stories/johnson-interview
+  to:         /stories/accounts/johnson
+
+-
+  method:     r301
+  from:       /stories/steffens
+  to:         /stories/accounts/steffens
+
+-
+  method:     r301
+  from:       /stories/marches
+  to:         /stories/features/marches
+
+
+# TODO need to redirect footage clips to new locations
+
+############
+## IMAGES ##
+############
+
+-
+  # mb016 ->  band.img.0016
+  method:     r301
+  from:       !ruby/regexp /^\/multimedia\/images\/mb0(\d{2})\/$/
+  to:         /multimedia/images/band.img.00$1
+
+-
+  method:     r301
+  from:       /multimedia/images/js001
+  to:         /multimedia/images/band.img.0020
+
+-
+  # ab001 ->  band.img.0021
+  method:     r301
+  from:       !ruby/regexp /^\/multimedia\/images\/ab00(\d)\/$/
+  to:         /multimedia/images/band.img.002$1

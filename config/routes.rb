@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   # note: topic has same path as ID so need constraint on matches
   get "multimedia/images/:topic", to: "items#multimedia_images", as: "image_topic",
     topic: /(aerial|field|group|parade|people)/
-  get "multimedia/images/:id", to: "items#multimedia_image", as: "image"
+  get "multimedia/images/:id", to: "items#multimedia_image",
+    as: "image", id: with_period
   get "multimedia/footage", to: "items#multimedia_footage", as: "footage"
   get "multimedia/footage/:id", to: "items#multimedia_footage_clip",
     as: "footage_clip", id: with_period
