@@ -37,7 +37,6 @@
      
       <%= image_tag iiif(item["image_id"]), class: "thumbnail" %>
       <p><%= item["description"] %></p>
-      <p>Reel: TODO <%# item["archives_id"] %></p>
       <%= link_to "View More Information", footage_clip_path(id: item["identifier"]), class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
     </button>
 
@@ -47,7 +46,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="<%= item["identifier"] %>"><%= year %></h5>
+            <h4 class="modal-title" id="<%= item["identifier"] %>"><%= year %></h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
@@ -59,23 +58,13 @@
               <p>Your browser doesn't support HTML5 video. Here is
                  a <%= link_to "link to the video", video_link %> instead.</p>
             </video>
-            <h6>Clip Information</h6>
+            <h5>Clip Information</h5>
             <ul>
-              <li><strong>Date:</strong> <%= item["date_display"] %></li>
-              <li><strong>Reel Seconds:</strong> TODO <%# info["reel_time"] %></li>
-              <li><strong>Description:</strong> <%= item["desc"] %></li>
+              <li><strong>Source</strong> <%= item["source"] %></li>
+              <li><strong>Description:</strong> <%= item["description"] %></li>
             </ul>
 
-            <h6>Reel Information</h6>
-            <ul>
-              <li><strong>Reel:</strong> <%# info["archives_id"] %></li>
-              <li><strong>Format:</strong> <%# info["format"] %></li>
-              <li><strong>Record Group:</strong> <%# info["record_group"] %>, University of Nebraska Archives and Special Collections</li>
-              <li><strong>Reel Description:</strong> <%# info["archives_desc"] %></li>
-              <li><a href="<%# info["commons_link"] %>">Mediacommons Link (external)</a></li>
-              <li><strong>Digitization Sponsor:</strong> <%# info["sponsor"] %></li>
-            </ul>
-      <%= link_to "View More Information", footage_clip_path(id: item["identifier"]), class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
+            <%= link_to "View more information about the footage clip and original reel", footage_clip_path(id: item["identifier"]), class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
 
           </div>
           <div class="modal-footer">
