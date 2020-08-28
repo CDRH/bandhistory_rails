@@ -1,38 +1,28 @@
 <div class="navbar navbar-default">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse"
-        data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav mr-auto">
-        <li class="<%= active?(/^#{config.relative_url_root}\/multimedia/,request.path) %> nav-item">
-          <%= link_to "Sights & Sounds", :multimedia, class: "nav-link" %>
-        </li>
-        <li class="<%= active?(timeline_path) %> nav-item">
-          <%= link_to "Timeline", :timeline, class: "nav-link" %>
-        </li>
-        <li class="<%= active?(/^#{config.relative_url_root}\/stories/,request.path) %> nav-item">
-          <%= link_to "Stories", :stories, class: "nav-link" %>
-        </li>
-        <!-- Removing browse temporarily until we figure out what we want -->
-        <!--
-        <li class="<%# active?(/^#{config.relative_url_root}\/browse/,
-          request.path) %> nav-item">
-          <%# link_to t("browse.title", default: "Browse"), :browse, class: "nav-link" %>
-        </li>
-        -->
-        <li class="<%= active?(search_path) %> nav-item">
-          <%= link_to t("search.title", default: "Search"), :search, rel: "search", class: "nav-link" %>
-        </li>
-        <li class="<%= active?(about_path) %> nav-item">
-          <%= link_to t("about.title", default: "About"), :about, class: "nav-link" %>
-        </li>
-      </ul>
-    </div>
+    <ul class="nav navbar-nav mr-auto">
+      <li class="<%= active?(/^#{config.relative_url_root}\/multimedia/,request.path) %> nav-item">
+        <%= link_to "Sights & Sounds", :multimedia, class: "nav-link" %>
+      </li>
+      <li class="<%= active?(timeline_path) %> nav-item">
+        <%= link_to "Timeline", :timeline, class: "nav-link" %>
+      </li>
+      <li class="<%= active?(/^#{config.relative_url_root}\/stories/,request.path) %> nav-item">
+        <%= link_to "Stories", :stories, class: "nav-link" %>
+      </li>
+      <!-- Removing browse temporarily until we figure out what we want -->
+      <!--
+      <li class="<%# active?(/^#{config.relative_url_root}\/browse/,
+        request.path) %> nav-item">
+        <%# link_to t("browse.title", default: "Browse"), :browse, class: "nav-link" %>
+      </li>
+      -->
+      <li class="<%= active?(search_path) %> nav-item">
+        <%= link_to t("search.title", default: "Search"), :search, rel: "search", class: "nav-link" %>
+      </li>
+      <li class="<%= active?(about_path) %> nav-item">
+        <%= link_to t("about.title", default: "About"), :about, class: "nav-link" %>
+      </li>
+    </ul>
   </div>
-</div><!-- /navbar -->
+</div><!-- /navbar --> 

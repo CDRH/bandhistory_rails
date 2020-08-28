@@ -582,3 +582,40 @@ a.btn {
     background-color: mix($primary,$black,70%);
   }
 }
+
+
+// new
+.navbar-brand {
+  line-height: 1.2em;
+  float: none;
+}
+
+/* line 594, app/assets/stylesheets/global/bandhistory_rails.scss */
+.site-title-container a {
+  text-decoration: none;
+}
+
+/* line 598, app/assets/stylesheets/global/bandhistory_rails.scss */
+#header .navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%
+}
+
+#header .navbar-nav li {
+  font-size: 1em;
+  margin: .3em;
+}
+
+#header .navbar {
+  margin-bottom: 0;
+}
+
+.footer .row {
+  display: flex;
+}
+
+.filters-topic .btn {
+  margin: 0 5px 8px 0;
+}

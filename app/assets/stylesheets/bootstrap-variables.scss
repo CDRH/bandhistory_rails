@@ -10,21 +10,21 @@ $bootstrap-sass-asset-helper: false !default;
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              #253133 !default;
+$gray-base:              $black !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$light-base: #d3dbde;
+$light-base: $white;
 $light-lighter: lighten($light-base, 11%);
 
-$brand-primary:         $primary !default; //dark blue
-$brand-success:         $green !default; //green old #5A9D76
-$brand-info:            $info !default; //blue
-$brand-warning:         $warning !default; //yellow
-$brand-danger:          $danger !default; //gray
+$brand-primary:         $primary !default;
+$brand-success:         $green !default;
+$brand-info:            $secondary !default;
+$brand-warning:         $warning !default;
+$brand-danger:          $danger !default;
 
 $nav-accent:            #f8f8f8 !default;
 
@@ -50,11 +50,11 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family-base:        $font-family-serif !default;
+$font-family-base:        $font-family-sans-serif !default;
 
 $font-size-base:          16px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
@@ -115,9 +115,9 @@ $padding-xs-horizontal:     5px !default;
 $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        4px !default;
-$border-radius-large:       6px !default;
-$border-radius-small:       3px !default;
+$border-radius-base:        0 !default;
+$border-radius-large:       0 !default;
+$border-radius-small:       0 !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    #fff !default;
@@ -169,13 +169,13 @@ $btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;
 $btn-success-border:             darken($btn-success-bg, 5%) !default;
 
-$btn-info-color:                 #fff !default;
+$btn-info-color:                 $black !default;
 $btn-info-bg:                    $brand-info !default;
-$btn-info-border:                darken($btn-info-bg, 5%) !default;
+$btn-info-border:                transparent !default;
 
-$btn-warning-color:              #fff !default;
+$btn-warning-color:              $black !default;
 $btn-warning-bg:                 $brand-warning !default;
-$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
+$btn-warning-border:             transparent !default;
 
 $btn-danger-color:               #fff !default;
 $btn-danger-bg:                  $brand-danger !default;
@@ -793,7 +793,7 @@ $badge-active-bg:             #fff !default;
 
 $badge-font-weight:           bold !default;
 $badge-line-height:           1 !default;
-$badge-border-radius:         10px !default;
+$badge-border-radius:         0 !default;
 
 
 //== Breadcrumbs
