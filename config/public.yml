@@ -62,10 +62,6 @@ default: &default
 
   facets:
     en:
-      category:
-        label: Category
-        flags:
-          - search_filter
       subcategory:
         label: Subcategory
         flags:
@@ -74,12 +70,13 @@ default: &default
         label: Year
         flags:
           - search_filter
-      person.name:
-        label: People
-        flags:
-          - search_filter
-      repository:
-        label: Repository
+      # hide this until we encode all people
+      # person.name:
+      #   label: People
+      #   flags:
+      #     - search_filter
+      publisher:
+        label: Source
         flags:
           - search_filter
       format:
@@ -87,13 +84,9 @@ default: &default
         flags:
           - search_filter
       keywords:
-        label: Keyword
-        flags:
-          - search_filter
+        label: Film Topics
       topics:
-        label: Topic
-        flags:
-          - search_filter
+        label: Image Topics
 
 test:
   <<: *default
