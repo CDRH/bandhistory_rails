@@ -53,12 +53,36 @@
 
 <div class="album_gallery">
   <% images.each do |image| %>
+    <% img_path = "photographs/#{image[:id]}" %>
     <a class="gallery"
-      href="<%= iiif("photographs/#{image[:id]}", size: "!800,800") %>"
+      href="<%= iiif(img_path, size: "!800,800") %>"
       title="<%= image[:label] %>">
-      <%= image_tag iiif("photographs/#{image[:id]}"), class: "preview", alt: image[:label] %>
+      <%= image_tag iiif(img_path), class: "preview", alt: image[:label], "data-image": img_path  %>
     </a>
   <% end %>
+</div>
+
+<div class="album_transcription">
+  <h2>Transcription</h2>
+  <div class="album_page">
+    <p>ON PARADE</p>
+    <p>UNIVERSITY OF NEBRASKA BAND</p>
+    <p>Processed and Pressed by RCA Victor</p>
+    <p>Produced and Published by Recorded Publications Co.</p>
+  </div>
+  <div class="album_page">
+    <p>ON PARADE</p>
+    <p>The UNIVERSITY OF NEBRASKA R. O. T. C. BAND</p>
+    <p>DONALD A. LENTZ, Conductor</p>
+    <p>The thrill which comes from seeing and hearing a big marching band is unlike any other in the world, as thousands of fans who jam the University of Nebraska's Memorial Stadium on autumn Saturdays will readily admit. The sight of the 120 University Band members — their scarlet and cream uniforms bright against the green sod, their instruments flashing in the aftenroon sun — is one not soon forgotten.</p>
+    <p>The band's playing of traditional school songs has established it most firmly in the hearts of Nebraskans. When the band swings into "The Cornhusker," just before the team comes out on the field, the Spirit of the Scarlet and Cream comes to life. To help its many followers recapture this and other precious moments, the band has made these records. Band members hope, too, that this album will help to acquaint other persons with Cornhusker songs performed with typical Cornhusker enthusiasm.</p>
+    <p>Included are "The Cornhusker", "Hail Varsity", "Dear Old Nebraska U", "March of the Cornhuskers", the "Chant", and "Hail Nebraska", the newest official song. The "Purple Carnival" by Alford and "Thunder and Blazes" by Fucik are well known to all Nebraska football fans, as the band always makes its entrance to one of these marches. This music comes from young people who play because they enjoy playing, and who have found that it makes more than uniforms to make a band.</p>
+    <p>There has been a University of Nebraska band for almost as many years as there has been a University of Nebraska. In 1879, when there were fewer than 300 students in the struggling young institution, the first R.O.T.C. Band was organized to furnish music for military drills. There were 12 members.</p>
+    <p>Since that pioneer era the band has, in a sense, reflected the growth and maturing of the University. Today 140 young men and women are members of one or more of the organization's three units — The Marching Band, which performs at football games; the Symphonic band, which plays chiefly concert music; and the 35-piece Brass Choir. The band has been conducted by many notable musicians; among whom were <span data-person="band.per.0002">Professor Everett</span>, <span data-person="band.per.0003">George Hitchcock</span>, <span data-person="band.per.0005">D.F. Easterday</span>, <span data-person="band.per.0006">Lt. Earl Wehn</span>, <span data-person="band.per.0008">August Hagenow</span>, <span data-person="band.per.0009">C. B. Cornell</span>, <span data-person="band.per.0010">W. T. "Billy" Quick</span>, and the present conductor, <span data-person="band.per.0011">Donald A. Lentz</span>, who succeeded Quick in 1937.</p>
+    <p>Typical of the high recognitions the band has received in recent years is the statement by the Tournament of Roses Director after the band parade and half-time show at the Nebraska-Stanford Rose Bowl game in 1940. "Beyond a doubt, the band has been the best in precision. We would like to see more of you."</p>
+    <p>This album is a project of Gamma Lambda, honorary band fraternity at the University of Nebraska.</p>
+  </div>
+
 </div>
 
 <script>
