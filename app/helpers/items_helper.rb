@@ -6,7 +6,10 @@ module ItemsHelper
     title_display = item["title"].present? ?
       item["title"] : t("search.results.item.no_title", default: "Untitled")
 
-    if subcategory == "images"
+    if subcategory == "audio"
+      id = item["identifier"].split(".").last
+      path = audio_item_path(id: id)
+    elsif subcategory == "images"
       path = image_path(id: item["identifier"])
     elsif subcategory == "footage"
       path = footage_clip_path(id: item["identifier"])

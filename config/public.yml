@@ -76,11 +76,7 @@ default: &default
       #   flags:
       #     - search_filter
       publisher:
-        label: Source
-        flags:
-          - search_filter
-      format:
-        label: Format
+        label: Publisher
         flags:
           - search_filter
       keywords:
