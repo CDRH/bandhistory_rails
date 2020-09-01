@@ -19,11 +19,11 @@ hr {
 }
 
 .interview-round, .interview-dussault {
-  background-color: lighten( $secondary, 15% );
+  background-color: $secondary;
 }
 
 .interview-wirth-mike {
-  background-color: lighten( $gray-300, 15% );
+  background-color: lighten( $secondary, 10% );
 }
 
 .interview-row {
