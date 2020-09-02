@@ -5,7 +5,7 @@
   <% if params["topic"].blank? %>
     The images in this section have been drawn together from half a dozen collections in the University of Nebraska Archives & Special Collections, such as the collections of Don Lentz, Jack Snider, University Communications, ROTC, and Marching Band.
   <% elsif params["topic"] == "aerial" %>
-    The classic view of a marching band halftime show is from the stands. What better way to see the band's formations and the accompanying card section? More aerial views of the band are available on the TODO <%= link_to "footage", "/multimedia/footage.html" %> page.
+    The classic view of a marching band halftime show is from the stands. What better way to see the band's formations and the accompanying card section? More aerial views are available in <%= link_to "footage", footage_path %> of the band.
   <% elsif params["topic"] == "field" %>
     One of the band's most familiar settings is on the football field or in the stands, cheering for the team. In these photos, though uniforms, instrumentation, and membership may vary through the years, it is clear that some traditions change very little.
   <% elsif params["topic"] == "group" %>
