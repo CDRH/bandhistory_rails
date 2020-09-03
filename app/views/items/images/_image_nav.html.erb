@@ -2,14 +2,14 @@
   <div class="filters-topic">
     <h3>Filter Projects by Topic:</h3>
     <div class="filter-buttons">
-      <%= link_to :footage, class: "btn btn-filter btn-warning" do %>
+      <%# if no facet selected, highlight all %>
+      <% all_btn = params["topic"].blank? ? "btn-primary" : "btn-warning" %>
+      <%= link_to :images, class: "btn btn-filter #{all_btn}" do %>
         All <span class="badge">X</span>
       <% end %>
       <% @facets.facets["topics"].each do |facet, num| %>
-        <% link_class = "btn btn-filter " %>
-        <% link_class += "btn-info" if !facet_selected?("facets", facet) %>
-        <% link_class += "btn-primary" if facet_selected?("facets", facet) %>
-        <%= link_to footage_path({ "f" => ["facets|#{facet}"] }), class: link_class do %>
+        <% btn_class = topic_selected?(facet) ? "btn-primary" : "btn-info" %>
+        <%= link_to image_topic_path({ topic: facet }), class: "btn btn-filter #{btn_class}" do %>
           <%= facet.titleize %> <span class="badge"><%= num %></span>
         <% end %>
       <% end %>

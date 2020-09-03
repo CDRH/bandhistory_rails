@@ -14,4 +14,9 @@ module ApplicationHelper
       false
     end
   end
+
+  def topic_selected? facet
+    params["topic"] == facet
+  end
+
 end
