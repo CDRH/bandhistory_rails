@@ -11,11 +11,8 @@
 
 <div class="container">
 
-  <div class="row">
-    <div class="col-md-4">
-      <%= image_tag "421201-01543.jpg", alt: "A band member punches the air with her fist during a football game" %>
-    </div>
-    <div class="col-md-8">
+  <div class="row"> 
+    <div class="col-md-8 col-md-push-4">
       <p class="lead">The band's history has left a trail of documents and items housed in many collections and locations across campus, a testament to the numerous organizations and individuals the band has impacted over the years. This site's purpose is twofold: to unite and provide access to archival artifacts from the band's history, and to focus on aspects of the band's story that these materials tell with interviews and articles.</p>
 
       <p class="lead">
@@ -23,5 +20,8 @@
         learn about noteworthy events on the <%= link_to "Timeline", :timeline %>,
         and read interviews and articles in the <%= link_to "Stories", :stories %> section.
       </p>
+    </div>
+    <div class="col-md-4 col-md-pull-8">
+      <%= image_tag "421201-01543.jpg", alt: "A band member punches the air with her fist during a football game" %>
     </div>
   </div>

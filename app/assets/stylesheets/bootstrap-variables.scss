@@ -23,8 +23,8 @@ $light-lighter: lighten($light-base, 11%);
 $brand-primary:         $primary !default;
 $brand-success:         $green !default;
 $brand-info:            $secondary !default;
-$brand-warning:         $warning !default;
-$brand-danger:          $danger !default;
+$brand-warning:         $dark !default; 
+$brand-danger:          $gray-900 !default;
 
 $nav-accent:            #f8f8f8 !default;
 
@@ -173,13 +173,13 @@ $btn-info-color:                 $black !default;
 $btn-info-bg:                    $brand-info !default;
 $btn-info-border:                transparent !default;
 
-$btn-warning-color:              $black !default;
+$btn-warning-color:              $white !default;
 $btn-warning-bg:                 $brand-warning !default;
 $btn-warning-border:             transparent !default;
 
 $btn-danger-color:               #fff !default;
 $btn-danger-bg:                  $brand-danger !default;
-$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
+$btn-danger-border:              transparent !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
@@ -433,22 +433,22 @@ $navbar-inverse-toggle-border-color:        #333 !default;
 
 //=== Shared nav styles
 $nav-link-padding:                          10px 15px !default;
-$nav-link-hover-bg:                         $gray-lighter !default;
+$nav-link-hover-bg:                         $gray-100 !default;
 
-$nav-disabled-link-color:                   $gray-light !default;
-$nav-disabled-link-hover-color:             $gray-light !default;
+$nav-disabled-link-color:                   $gray-400 !default;
+$nav-disabled-link-hover-color:             $gray-400 !default;
 
 //== Tabs
-$nav-tabs-border-color:                     $gray-light !default;
+$nav-tabs-border-color:                     $gray-400 !default;
 
-$nav-tabs-link-hover-border-color:          $gray-lighter !default;
+$nav-tabs-link-hover-border-color:          $gray-200 !default;
 
-$nav-tabs-active-link-hover-bg:             $gray-light !default;
-$nav-tabs-active-link-hover-color:          $nav-accent !default;
-$nav-tabs-active-link-hover-border-color:   $gray-light !default;
+$nav-tabs-active-link-hover-bg:             $gray-200 !default;
+$nav-tabs-active-link-hover-color:          $red !default;
+$nav-tabs-active-link-hover-border-color:   $gray-400 !default;
 
-$nav-tabs-justified-link-border-color:            $gray-light !default;
-$nav-tabs-justified-active-link-border-color:     $gray-light !default;
+$nav-tabs-justified-link-border-color:            $gray-400 !default;
+$nav-tabs-justified-active-link-border-color:     $gray-400 !default;
 
 //== Pills
 $nav-pills-border-radius:                   $border-radius-base !default;

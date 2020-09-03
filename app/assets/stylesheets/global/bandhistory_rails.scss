@@ -1,4 +1,4 @@
-@import "colors";
+@import "../bootstrap-variables";
 
 /* ****************** */
 /* General Appearance */
@@ -91,12 +91,20 @@ img {
   }
 }
 
+// Overwriting a very specific bootstrap rule
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
 .navbar-dark .navbar-nav .nav-item {
   &.active {
     background-color: rgba(mix($primary,$black,100%),.8);
   }
   &:hover {
-    background-color: rgba(mix($primary,$black,20%),.8);
+    background-color: rgba(mix($primary,$black,20%),1);
   }
   .nav-link {
     background-color: transparent;
@@ -614,4 +622,90 @@ a.btn {
 
 .filters-topic .btn {
   margin: 0 5px 8px 0;
+}
+
+// new
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search_controls {
+  padding-top: .5em;
+}
+
+.pagination_container {
+  margin: 0;
+  text-align: right;
+  .pagination {
+    margin: 0;
+  }
+}
+
+.filter-buttons {
+  .btn {
+    font-family: 'Cutive', serif;
+    font-size: 1em;
+    font-weight: 100;
+    padding: .5em .5em .2em .5em;
+    span {
+      font-family: $font-family-sans-serif;
+      margin-left: .2em;
+    }
+  }
+}
+
+// Search
+// ------
+
+.searchResults {
+  border-bottom: 3px solid $gray-200;
+  color: $gray-700; //overwrite link color
+  display: flex;
+  padding: 1em 0 0 0;
+  &:hover {
+    background-color: $gray-100;
+    color: $gray-900; //overwrite link color
+  }
+}
+
+.search_results_image {
+  flex-basis: 150px;
+  margin: 0 20px 1em 0;
+  text-align: right;
+}
+
+.search_results_info {
+  flex: 2;
+}
+
+.search_item_info {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: .9em;
+  line-height: 1.2em;
+}
+
+.search_item_metadata {
+  flex: 2;
+  margin: .8em .5em 1em 0;
+  padding: 0;
+  li {
+    list-style-type: none;
+  }
+}
+
+.search_results_text {
+  flex: 5;
+  padding-top: .5em;
+}
+
+.search_results_text .search_results_highlights:not(:first-of-type) {
+    border-top: 4px solid lighten($gray-200, 10%);
+}
+
+.index_spacer a {
+  box-shadow: none;
 }
