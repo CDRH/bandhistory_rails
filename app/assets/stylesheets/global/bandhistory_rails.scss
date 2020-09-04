@@ -501,6 +501,12 @@ a.flex-item {
   }
 }
 
+@media only screen and (max-width: 830px) {
+  .flex-item {
+    max-width: 100%;
+  }
+}
+
 .filters-topic button, .filters-decade button {
   margin: 0 5px 8px 0
 }
