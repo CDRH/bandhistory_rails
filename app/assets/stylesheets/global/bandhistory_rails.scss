@@ -662,12 +662,20 @@ a.btn {
 
 .searchResults {
   border-bottom: 3px solid $gray-200;
-  color: $gray-700; //overwrite link color
+  color: $gray-900; //overwrite link color
   display: flex;
   padding: 1em 0 0 0;
+  text-decoration: none;
   &:hover {
     background-color: $gray-100;
     color: $gray-900; //overwrite link color
+    text-decoration: none;
+    .link_style {
+      color: $link-hover-color;
+    }
+    .search_results_highlights {
+      background-color: $white;
+    }
   }
 }
 
@@ -679,12 +687,18 @@ a.btn {
 
 .search_results_info {
   flex: 2;
+  .link_style {
+    text-decoration: underline;
+    color: $link-color;
+    font-size: 1.2em;
+    font-family: 'Cutive', serif;
+  }
 }
 
 .search_item_info {
   display: flex;
   flex-wrap: wrap;
-  font-size: .9em;
+  font-size: 1em;
   line-height: 1.2em;
 }
 
@@ -694,6 +708,17 @@ a.btn {
   padding: 0;
   li {
     list-style-type: none;
+  }
+}
+
+.search_results_highlights {
+  background-color: $gray-100;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border: solid 1px $gray-300;;
+  em {
+    background-color: $yellow;
   }
 }
 

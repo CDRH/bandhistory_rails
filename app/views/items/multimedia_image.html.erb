@@ -45,6 +45,12 @@
               "source", link: false) %>
           </li>
         <% end %>
+        <% if @res["publisher"].present? %>
+          <li>
+            <%= metadata(@res, t("item.metadata.publisher", default: "Publisher"),
+              "publisher", link: false) %>
+          </li>
+        <% end %>
         <% if @res["rights"].present? %>
           <li>
             <%= metadata(@res, t("item.metadata.rights", default: "Rights"),

@@ -24,4 +24,15 @@ module ItemsHelper
     link_to title_display, path
   end
 
+  def title_label(item)
+    # if locale is english specifically, use title
+    # otherwise always use title_es_k
+    untitled = t("search.results.item.no_title", default: "Untitled")
+    if locale == :en
+      item["title"].present? ? item["title"] : untitled
+    else
+      item["title_es_k"].present? ? item["title_es_k"] : untitled
+    end
+  end
+
 end
