@@ -26,14 +26,9 @@ module ItemsHelper
   end
 
   def title_label(item)
-    # if locale is english specifically, use title
-    # otherwise always use title_es_k
+    # would need to modify this if creating a multilingual site
     untitled = t("search.results.item.no_title", default: "Untitled")
-    if locale == :en
-      item["title"].present? ? item["title"] : untitled
-    else
-      item["title_es_k"].present? ? item["title_es_k"] : untitled
-    end
+    item["title"].present? ? item["title"] : untitled
   end
 
 end

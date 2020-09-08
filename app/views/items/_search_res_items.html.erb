@@ -4,8 +4,6 @@
 <% if @res.count > 0 %>
   <div class="flex_row buffer-bottom-sm">
     <% @res.items.each do |item| %>
-      <% title_display = item["title"].present? ?
-      item["title"] : t("search.results.item.no_title", default: "Untitled") %>
       <%= link_to search_item_link(item), class: "searchResults flex_col-md" do %>
         <div class="search_results_image">
           <% if item["image_id"] %>
