@@ -26,13 +26,14 @@ ItemsController.class_eval do
   end
 
   def multimedia_images
-    @title = "Images"
-
     options = params.permit!.deep_dup
     options["f"] = [] if options["f"].blank?
     options["f"] << "subcategory|Images"
     if params["topic"].present?
       options["f"] << "topics|#{params["topic"]}"
+      @title = "#{params["topic"].titleize} Images"
+    else
+      @title = "Images"
     end
 
     @facets = $api.query({

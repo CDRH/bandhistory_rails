@@ -1,4 +1,4 @@
-<%# TODO make title dynamic %>
+<% @title = @res["title"] %>
 
 <% year = @res["date"].present? ? @res["date"][0,4] : "undated" %>
 <h2><%= @res["title"] %> (<%= year %>)</h2>
