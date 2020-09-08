@@ -93,7 +93,13 @@
 
 <h2 id="tech">Website Technology</h2>
 
-<p>The website technology section is coming soon!</p>
+<p>This website is built in <a href="https://rubyonrails.org/" target="_blank" rel="nofollow noopener">Ruby on Rails</a> on the <a href="https://github.com/CDRH/orchid/" target="_blank" rel="nofollow noopener">Orchid framework</a> developed by the <a href="https://cdrh.unl.edu/" target="_blank" rel="nofollow noopener">Center for Digital Research in the Humanities</a> (CDRH). The search and item view is largely powered by <a href="https://www.elastic.co/home" target="_blank" rel="nofollow noopener">Elasticsearch</a> using the <a href="https://github.com/CDRH/api" target="_blank" rel="nofollow noopener">CDRH Apium</a> project.</p>
+
+<p>Items are stored as a combination of spreadsheets (for materials such as footage and images) or TEI-XML files (newspaper articles, letters, other documents). These are then transformed using the CDRH project <a href="https://github.com/CDRH/datura" target="_blank" rel="nofollow noopener">Datura</a> into Elasticsearch JSON or display HTML.</p>
+
+<p>Images are served by <a href="https://cantaloupe-project.github.io/" target="_blank" rel="nofollow noopener">Cantaloupe</a>, a <a href="https://iiif.io/" target="_blank" rel="nofollow noopener">IIIF</a> compatible image server.</p>
+
+<p>The first release of the project was built with <a href="https://middlemanapp.com/" target="_blank" rel="nofollow noopener">Middleman</a>, a Ruby static site generator. This was done intentionally to create a static HTML site with minimal resources and maintenance requirements. The site was migrated to Ruby on Rails during 2020 when work on the project began on text based resources.</p>
 
 <h2 id="reels">Reel Digitization Acknowledgements</h2>
 
