@@ -1,10 +1,11 @@
 module ItemsHelper
   include Orchid::ItemsHelper
 
+
+  # because of how the link is being structured, this method needs to return only
+  # the path and NOT an entire link, differing from the orchid expected behavior
   def search_item_link(item)
     subcategory = item["subcategory"].downcase
-    title_display = item["title"].present? ?
-      item["title"] : t("search.results.item.no_title", default: "Untitled")
 
     if subcategory == "audio"
       id = item["identifier"].split(".").last
@@ -21,7 +22,7 @@ module ItemsHelper
       path = feature_path(id: id)
     end
 
-    link_to title_display, path
+    path
   end
 
   def title_label(item)
