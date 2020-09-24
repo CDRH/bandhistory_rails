@@ -10,16 +10,20 @@ module ItemsHelper
     if subcategory == "audio"
       id = item["identifier"].split(".").last
       path = audio_item_path(id: id)
-    elsif subcategory == "images"
-      path = image_path(id: item["identifier"])
-    elsif subcategory == "footage"
-      path = footage_clip_path(id: item["identifier"])
-    elsif subcategory == "personal accounts"
-      id = item["identifier"].split(".").last
-      path = account_path(id: id)
     elsif subcategory == "features"
       id = item["identifier"].split(".").last
       path = feature_path(id: id)
+    elsif subcategory == "footage"
+      path = footage_clip_path(id: item["identifier"])
+    elsif subcategory == "images"
+      path = image_path(id: item["identifier"])
+    elsif subcategory == "newspaper"
+      path = documents_newspaper_path(id: item["identifier"])
+    elsif subcategory == "personal accounts"
+      id = item["identifier"].split(".").last
+      path = account_path(id: id)
+    else
+      path = item_path(id: item["identifier"])
     end
 
     path

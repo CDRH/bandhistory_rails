@@ -1,0 +1,13 @@
+<%# overridding this so that subcategories have
+individual control over display %>
+
+
+<h1><%= @res["title"] %></h1>
+
+<% if @res["subcategory"] == "Newspaper" %>
+  <%= render_overridable("documents_newspaper_item") %>
+
+<% else %>
+  <%= render_overridable("show_metadata") %>
+  <%= render_overridable("show_content") %>
+<% end %>

@@ -80,9 +80,11 @@ default: &default
         flags:
           - search_filter
       keywords:
-        label: Film Topics
+        label: Topic
+        flags:
+          - search_filter
       topics:
-        label: Image Topics
+        label: Image Topic
 
 test:
   <<: *default

@@ -1,0 +1,13 @@
+<p><%= @res["publisher"] %>, <%= @res["date_display"] %></p>
+
+<p>
+  <%= link_to "View Newspaper Entry",
+      @res["source"],
+      target: "_blank",
+      rel: "nofollow noreferrer" %>
+</p>
+
+<p>
+  <strong>Article Description:</strong>
+  <%= @res["description"] %>
+</p>
