@@ -1,13 +1,19 @@
-<p><%= @res["publisher"] %>, <%= @res["date_display"] %></p>
+<div class="row">
 
-<p>
-  <%= link_to "View Newspaper Entry",
-      @res["source"],
-      target: "_blank",
-      rel: "nofollow noreferrer" %>
-</p>
+  <div class="col-md-6">
+    <div class="publisher">
+      <%= @res["publisher"] %>, <%= @res["date_display"] %>
+    </div>
+    <p><%= @res["description"] %></p>
+  </div>
 
-<p>
-  <strong>Article Description:</strong>
-  <%= @res["description"] %>
-</p>
+  <div class="col-md-6">
+    <%= link_to @res["source"],
+        target: "_blank",
+        rel: "nofollow noreferrer" do %>
+      <p>View article on Nebraska Newspapers website</p>
+      <%= image_tag "no_image_newspaper", alt: "No image", class: "no-image-newspaper" %>
+    <% end %>
+  </div>
+
+</div>

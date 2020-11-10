@@ -8,6 +8,8 @@
         <div class="search_results_image">
           <% if item["image_id"] %>
             <%= image_tag iiif(item["image_id"]) %>
+          <% elsif item["subcategory"] == "Newspaper" %>
+            <%= image_tag "no_image_newspaper.jpg", size: "150" %>
           <% else %>
             <%= image_tag "no_image.png", size: "150" %>
           <% end %>
