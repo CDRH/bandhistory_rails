@@ -1,15 +1,5 @@
 ItemsController.class_eval do
 
-  def multimedia_documents
-  end
-
-  def multimedia_documents_newspapers
-  end
-
-  def multimedia_documents_newspaper
-    item_retrieve(params["id"])
-  end
-
   def multimedia_footage
     options = params.permit!.deep_dup
     options["f"] = [] if options["f"].blank?

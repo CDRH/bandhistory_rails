@@ -23,11 +23,18 @@ Rails.application.routes.draw do
   get "multimedia/footage", to: "items#multimedia_footage", as: "footage"
   get "multimedia/footage/:id", to: "items#multimedia_footage_clip",
     as: "footage_clip", id: with_period
-  ### documents
-  get "multimedia/documents", to: "items#multimedia_documents", as: "documents"
-  get "multimedia/documents/newspapers", to: "items#multimedia_documents_newspapers", as: "documents_newspapers"
-  get "multimedia/documents/newspapers/:id", to: "items#multimedia_documents_newspaper",
-    as: "documents_newspaper", id: with_period
+
+  #############
+  # DOCUMENTS #
+  #############
+  get "documents", to: "documents#home", as: "documents"
+
+  scope "/documents/newspapers" do
+    Orchid::Routing.draw(section: "newspapers",
+      routes: ["home", "browse", "browse_facet", "item", "search"],
+      scope: "/documents/newspapers"
+    )
+  end
 
   # stories
   get "stories", to: "stories#index", as: "stories"

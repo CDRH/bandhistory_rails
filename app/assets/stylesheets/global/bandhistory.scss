@@ -306,9 +306,6 @@ $dark-overlay: rgba(0,0,0,0.7);
 .section-nav.section-nav-multimedia-images .section-nav-image {
   background: image-url('nav_backgrounds/images.jpg');
 }
-.section-nav.section-nav-multimedia-documents .section-nav-image {
-  background: image-url('nav_backgrounds/default02.jpg');
-}
 
 // Sights & Sounds > Audio
 
@@ -335,6 +332,15 @@ $dark-overlay: rgba(0,0,0,0.7);
 .section-nav.section-nav-multimedia-people .section-nav-image {
   background: image-url('nav_backgrounds/people.jpg');
 }*/
+
+// Documents
+
+.section-nav.section-nav-documents .section-nav-image {
+  background: image-url('nav_backgrounds/default02.jpg');
+}
+.section-nav.section-nav-documents-newspapers .section-nav-image {
+  background: image-url('nav_backgrounds/newspapers.jpg');
+}
 
 // Stories
 
@@ -758,6 +764,6 @@ a.btn {
   margin-bottom: 20px;
 }
 
-.action_multimedia_documents_newspaper h1 {
+.section_newspapers.action_show h1 {
   font-size: 32px;
 }

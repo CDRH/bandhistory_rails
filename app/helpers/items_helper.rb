@@ -18,7 +18,7 @@ module ItemsHelper
     elsif subcategory == "images"
       path = image_path(id: item["identifier"])
     elsif subcategory == "newspaper"
-      path = documents_newspaper_path(id: item["identifier"])
+      path = newspapers_item_path(id: item["identifier"])
     elsif subcategory == "personal accounts"
       id = item["identifier"].split(".").last
       path = account_path(id: id)

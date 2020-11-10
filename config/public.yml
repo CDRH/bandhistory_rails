@@ -30,8 +30,8 @@ default: &default
     # SECTIONS
     # List of section names corresponding to YAML files in config/sections/
     # YAML file contains api_options and facets values applied section-wide
-    # sections:
-    #   - section_name
+    sections:
+      - newspapers
 
   api_options:
     # example of default filter for all queries
@@ -62,8 +62,12 @@ default: &default
 
   facets:
     en:
+      category:
+        label: Site Section
+        flags:
+          - search_filter
       subcategory:
-        label: Subcategory
+        label: Item Type
         flags:
           - search_filter
       date.year:

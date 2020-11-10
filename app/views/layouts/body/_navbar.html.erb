@@ -4,6 +4,10 @@
       <li class="<%= active?(/^#{config.relative_url_root}\/multimedia/,request.path) %> nav-item">
         <%= link_to "Sights & Sounds", :multimedia, class: "nav-link" %>
       </li>
+      <li class="<%= active?(/^#{config.relative_url_root}\/documents/,request.path) %> nav-item">
+        <%= link_to "Documents", :documents,
+          class: "nav-link" %>
+      </li>
       <li class="<%= active?(timeline_path) %> nav-item">
         <%= link_to "Timeline", :timeline, class: "nav-link" %>
       </li>
