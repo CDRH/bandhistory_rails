@@ -593,19 +593,16 @@ a.btn {
   }
 }
 
-
 // new
 .navbar-brand {
   line-height: 1.2em;
   float: none;
 }
 
-/* line 594, app/assets/stylesheets/global/bandhistory_rails.scss */
 .site-title-container a {
   text-decoration: none;
 }
 
-/* line 598, app/assets/stylesheets/global/bandhistory_rails.scss */
 #header .navbar-nav {
   display: flex;
   flex-wrap: wrap;
@@ -739,4 +736,28 @@ a.btn {
 
 .index_spacer a {
   box-shadow: none;
+}
+
+/* NEWSPAPER SHOW PAGE */
+
+.no-image-newspaper {
+  width: 200px;
+  // allows for dimming of image when hovered
+  -webkit-filter: brightness(100%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1 ease;
+  transition: all 1s ease;
+  &:hover {
+    -webkit-filter: brightness(50%);
+  }
+}
+
+.publisher {
+  margin-bottom: 20px;
+}
+
+.action_multimedia_documents_newspaper h1 {
+  font-size: 32px;
 }
