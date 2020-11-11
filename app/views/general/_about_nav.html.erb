@@ -3,11 +3,19 @@
 <div class="filters about-nav">
   <div class="filters-topic">
     <div class="filter-buttons">
-      <%= link_to "Project Team", :about, class: "btn btn-filter btn-primary" %>
-      <%= link_to "About the Archives", :about_archives, class: "btn btn-filter btn-warning" %>
-      <%= link_to "Acknowledgements", :about_thanks, class: "btn btn-filter btn-warning" %>
-      <%= link_to "Website Technology", :about_tech, class: "btn btn-filter btn-warning" %>
-      <%= link_to "Project History", :about_history, class: "btn btn-filter btn-warning" %>
+
+      <% nav_items = {
+        "Project Team" => :about,
+        "Acknowledgements" => :about_thanks,
+        "About the Archives" => :about_archives,
+        "Website Technology" => :about_tech,
+        "Project History" => :about_history
+      } %>
+
+      <% nav_items.each do |item, link| %>
+        <%= link_to item, link, class: about_nav_class(link.to_s) %>
+      <% end %>
+
     </div>
   </div>
 </div>
