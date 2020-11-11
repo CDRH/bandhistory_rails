@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   #############
   get "documents", to: "documents#home", as: "documents"
 
+
   scope "/documents/newspapers" do
     Orchid::Routing.draw(section: "newspapers",
       routes: ["home", "browse", "browse_facet", "item", "search"],
@@ -42,4 +43,13 @@ Rails.application.routes.draw do
   get "stories/accounts/:id", to: "stories#account", as: "account"
   get "stories/features", to: "stories#features", as: "features"
   get "stories/features/:id", to: "stories#feature", as: "feature"
+
+  #########
+  # ABOUT #
+  #########
+
+  get "about/acknowledgements", to: "general#about_thanks", as: "about_thanks"
+  get "about/archives", to: "general#about_archives", as: "about_archives"
+  get "about/history", to: "general#about_history", as: "about_history"
+  get "about/technology", to: "general#about_tech", as: "about_tech"
 end
