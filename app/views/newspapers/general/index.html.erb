@@ -2,4 +2,24 @@
 
 <p>TODO write an introduction to the newspapers here to explain the student newspaper history, etc, then include links to some common papers, and any relevant essays, etc.</p>
 
+<div class="filters">
+  <div class="filters-topic">
+    <div class="filter-buttons">
+
+      <% nav_items = {
+        "The Hesperian Student" => "1871-1890",
+        "The Hesperian" => "1890-1901",
+        "The Daily Nebraskan" => "1901-2001*"
+      } %>
+
+      <% nav_items.each do |item, date| %>
+        <%= link_to "#{item} (#{date})", newspapers_search_path({ f: ["publisher|#{item}"] }), class: "btn btn-filter btn-warning" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<p>* Note: the Daily Nebraskan's entire date range is not yet available on <a href="https://nebnewspapers.unl.edu/lccn/sn96080312/" rel="noreferrer" target="_blank">Nebraska Newspapers</a>.</p>
+
 <p><%= link_to "Search", newspapers_search_path %></p>
