@@ -1,7 +1,7 @@
 <h1>Newspapers</h1>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-9">
     <p class="lead">
       Student newspapers <em>The Hesperian Student</em> (1871-1890), <em>The Hesperian</em> (1890-1901), and the <em>Daily Nebraskan</em> (1901-present) provided coverage of campus activities through the lens of student reporters and editors.
     </p>
@@ -12,54 +12,63 @@
       At the moment, this newspaper index is in progress, and covers mostly the 1900s and 1920s. In the future, more decades of newspaper articles will be represented and searchable.
     </p>
 
-    <div class="filter-buttons">
-    <%= link_to "Browse Newspaper Index", newspapers_search_path, class: "btn btn-primary btn-filter", role: "button" %>
-    </div>
+    
 
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <%= image_tag "newspaper.jpg", alt: "Daily Nebraskan front page with photo of the band performing with headline Band travels to regular-season away game" %>
   </div>
 </div>
 
-<h2>Search</h2>
+<div class="row">
+  <div class="col-md-4">
 
-<%= form_tag prefix_path(route_path), method: "get",
-  class: "input-group" do %>
-  <!-- search box -->
-  <%= text_field_tag(:q, params[:q], :placeholder => t("search.placeholder", default: "Search for..."), :class => "form-control") %>
-  <!-- add existing search parameters to query -->
-  <%= render_overridable("items", "hidden_fields") %>
-  <!-- submit -->
-  <span class="input-group-btn">
-    <%= submit_tag t("search.submit", default: "Search"), class: "btn btn-primary", name: nil, data: { disable_with: false } %>
-  </span>
-<% end %>
-<%= render_overridable("items", "help") %>
+    <h2 class="text-center">Search</h2>
 
+    <%= form_tag prefix_path(route_path), method: "get",
+      class: "input-group" do %>
+      <!-- search box -->
+      <%= text_field_tag(:q, params[:q], :placeholder => t("search.placeholder", default: "Search for..."), :class => "form-control") %>
+      <!-- add existing search parameters to query -->
+      <%= render_overridable("items", "hidden_fields") %>
+      <!-- submit -->
+      <span class="input-group-btn">
+        <%= submit_tag t("search.submit", default: "Search"), class: "btn btn-primary", name: nil, data: { disable_with: false } %>
+      </span>
+    <% end %>
+    <%= render_overridable("items", "help") %>
 
-<h2>Browse by Publication</h2>
+  </div>
+  <div class="col-md-8">
 
-<div class="filters">
-  <div class="filters-topic">
+    <h2 class="text-center">Browse</h2>
+
     <div class="filter-buttons">
+        <%= link_to "Browse All Newspapers", newspapers_search_path, class: "btn btn-primary btn-filter", role: "button" %>
+        </div>
 
-      <% nav_items = {
-        "The Hesperian Student" => "1871-1890",
-        "The Hesperian" => "1890-1901",
-        "The Daily Nebraskan" => "1901-2001*"
-      } %>
+    <div class="filters">
+      <div class="filters-topic">
+        <div class="filter-buttons">
 
-      <% nav_items.each do |item, date| %>
-        <%= link_to "#{item} (#{date})", newspapers_search_path({ f: ["publisher|#{item}"] }), class: "btn btn-filter btn-warning" %>
-      <% end %>
+          <% nav_items = {
+            "The Hesperian Student" => "1871-1890",
+            "The Hesperian" => "1890-1901",
+            "The Daily Nebraskan" => "1901-2001*"
+          } %>
 
+          <% nav_items.each do |item, date| %>
+            <%= link_to "#{item} (#{date})", newspapers_search_path({ f: ["publisher|#{item}"] }), class: "btn btn-filter btn-warning" %>
+          <% end %>
+        </div>
+      </div>
     </div>
+
+    <p>
+      * Note: the Daily Nebraskan's entire date range is not yet available on <a href="https://nebnewspapers.unl.edu/lccn/sn96080312/" rel="noreferrer" target="_blank">Nebraska Newspapers</a>.
+    </p>
+
   </div>
 </div>
-
-<p>
-  * Note: the Daily Nebraskan's entire date range is not yet available on <a href="https://nebnewspapers.unl.edu/lccn/sn96080312/" rel="noreferrer" target="_blank">Nebraska Newspapers</a>.
-</p>
 
 
