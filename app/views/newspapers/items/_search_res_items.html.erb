@@ -5,15 +5,6 @@
   <div class="flex_row buffer-bottom-sm">
     <% @res.items.each do |item| %>
       <%= link_to search_item_link(item), class: "searchResults flex_col-md" do %>
-        <div class="search_results_image">
-          <% if item["image_id"] %>
-            <%= image_tag iiif(item["image_id"]) %>
-          <% elsif item["subcategory"] == "Newspaper" %>
-            <%= image_tag "no_image_newspaper.jpg", size: "150" %>
-          <% else %>
-            <%= image_tag "no_image.png", size: "150" %>
-          <% end %>
-        </div>
         <div class="search_results_info">
           <span class="link_style"><%= title_label(item) %></span>
           <div class="search_item_info">
@@ -32,8 +23,7 @@
               <% end %>
               <% if item["keywords"].present? %>
                 <li>
-                  <%= metadata(item, t("search.results.item.keywords",
-                    default: "testing"), "keywords", link: false) %>
+                  <strong>Topics:</strong> <%= item["keywords"].sort.join(" | ") %>
                 </li>
               <% end %>
               <% if item["person.name"].present? %>
