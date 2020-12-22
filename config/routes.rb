@@ -29,6 +29,19 @@ Rails.application.routes.draw do
   #############
   get "documents", to: "documents#home", as: "documents"
 
+  scope "/documents/drill" do
+    Orchid::Routing.draw(section: "drill",
+      routes: ["home", "browse", "browse_facet", "item", "search"],
+      scope: "/documents/drill"
+    )
+  end
+
+  scope "/documents/correspondence" do
+    Orchid::Routing.draw(section: "correspondence",
+      routes: ["home", "browse", "browse_facet", "item", "search"],
+      scope: "/documents/correspondence"
+    )
+  end
 
   scope "/documents/newspapers" do
     Orchid::Routing.draw(section: "newspapers",

@@ -9,9 +9,16 @@
     <div class="section-nav-image"></div>
   <% end %>
 
-  <a class="section-nav section-nav-documents">
-    <div class="section-nav-title">Coming Soon</div>
-    <div class="section-nav-subtitle">Manuals, correspondence, drill charts, and more, coming soon</div>
+  <%= link_to :correspondence_home, class: "section-nav section-nav-documents
+    section-nav-documents-correspondence" do %>
+    <div class="section-nav-title">Correspondence and Papers</div>
+    <div class="section-nav-subtitle">Letters, petitions, and more</div>
     <div class="section-nav-image"></div>
-  </a>
+  <% end %>
+
+  <%= link_to :drill_home, class: "section-nav section-nav-documents" do %>
+    <div class="section-nav-title">Drill</div>
+    <div class="section-nav-subtitle">Band manuals and drill charts</div>
+    <div class="section-nav-image"></div>
+  <% end %>
 </div>
