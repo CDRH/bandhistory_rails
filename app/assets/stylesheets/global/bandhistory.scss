@@ -350,9 +350,13 @@ $dark-overlay: rgba(0,0,0,0.7);
 .section-nav.section-nav-documents .section-nav-image {
   background: image-url('nav_backgrounds/default02.jpg');
 }
+.section-nav.section-nav-documents-correspondence .section-nav-image {
+  background: image-url('nav_backgrounds/correspondence.jpg');
+}
 .section-nav.section-nav-documents-newspapers .section-nav-image {
   background: image-url('nav_backgrounds/newspapers.jpg');
 }
+
 
 // Stories
 

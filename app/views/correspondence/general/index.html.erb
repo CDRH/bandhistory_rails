@@ -1,0 +1,39 @@
+<% @title = "Correspondence & Papers" %>
+
+<h1>Correspondence & Papers</h1>
+
+<div class="row">
+  <div class="col-md-9">
+    <p class="lead">
+      For those who know where to start looking, there is a wealth of information about the band in the Archives left by a paper trail of correspondence, records, bills, and more.
+    </p>
+    <p>
+      The vast majority of the records in Archives have not yet been digitized, but several documents are available for searching and browsing on the website at this time.
+    </p>
+  </div>
+  <div class="col-md-3">
+    <%# TODO different image %>
+    <%= image_tag "newspaper.jpg", alt: "Daily Nebraskan front page with photo of the band performing with headline Band travels to regular-season away game" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <h2 class="text-center">Search</h2>
+
+    <%= form_tag prefix_path(route_path), method: "get",
+      class: "input-group" do %>
+      <!-- search box -->
+      <%= text_field_tag(:q, params[:q], :placeholder => t("search.placeholder", default: "Search for..."), :class => "form-control") %>
+      <!-- add existing search parameters to query -->
+      <%= render_overridable("items", "hidden_fields") %>
+      <!-- submit -->
+      <span class="input-group-btn">
+        <%= submit_tag t("search.submit", default: "Search"), class: "btn btn-primary", name: nil, data: { disable_with: false } %>
+      </span>
+    <% end %>
+    <%= render_overridable("items", "help") %>
+
+  </div>
+</div>

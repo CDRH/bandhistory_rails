@@ -31,6 +31,8 @@ default: &default
     # List of section names corresponding to YAML files in config/sections/
     # YAML file contains api_options and facets values applied section-wide
     sections:
+      - correspondence
+      - drill
       - newspapers
 
   api_options:
