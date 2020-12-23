@@ -23,8 +23,6 @@
   to:         /stories/features/marches
 
 
-# TODO need to redirect footage clips to new locations
-
 ############
 ## IMAGES ##
 ############
@@ -45,3 +43,32 @@
   method:     r301
   from:       !ruby/regexp /^\/multimedia\/images\/ab00(\d)\/$/
   to:         /multimedia/images/band.img.002$1
+
+-
+  # rg150833 -> rg570903 snider rg change
+  method:     r301
+  from:       !ruby/regexp /^\/multimedia\/images\/150833-(\d{5})$/
+  to:         /multimedia/images/570903-$1
+
+-
+  # rg150813 -> rg570904 lentz / steffens rg change
+  method:     r301
+  from:       !ruby/regexp /^\/multimedia\/images\/150813-(\d{5})$/
+  to:         /multimedia/images/570904-$1
+
+
+###########
+# FOOTAGE #
+###########
+
+-
+  # 4.01.01 -> 1.02.01
+  method:     r301
+  from:       !ruby/regexp /^\/multimedia\/footage\/4\.\d{2}\.(\d{2})$/
+  to:         /multimedia/footage/1.02.$1
+
+-
+  # 5.01.01 -> 1.03.01
+  method:     r301
+  from:       !ruby/regexp /^\/multimedia\/footage\/5\.\d{2}\.(\d{2})$/
+  to:         /multimedia/footage/1.03.$1
