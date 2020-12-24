@@ -5,7 +5,7 @@
   <span data-field="date_display" data-date="2019-11-15">November 15, 2019</span>
 </h1>
 
-<p>Conversation held while looking at Krejci's scrapbook with <span data-person="band.per.0092">Jan Krejci</span> (daughter), <span data-person="band.per.0093">Mike Wirth</span> (grandson), and <span data-person="band.per.0094">Emmett Wirth</span> (great-grandson). <span data-person="band.per.0083">Jessica Dussault</span> recorded the discussion.</p>
+<p>Conversation held while looking at Krejci's scrapbook with <span data-person="band.per.0092">Jan Krejci</span> (daughter), <span data-person="band.per.0093">Mike Wirth</span> (grandson), and <span data-person="band.per.0094">E [name redacted]</span> (great-grandson). <span data-person="band.per.0083">Jessica Dussault</span> recorded the discussion.</p>
 
 <div class="introduction card card-body bg-light">
   <p>Robert "Bob" Krejci was a member of the band in 1940-1941 and marched in the Tournament of the Roses Parade in Pasadena, CA. Krejci later became a faculty member in the University of Nebraska College of Dentistry and a practicing dentist in Lincoln, NE.</p>
@@ -36,6 +36,15 @@
   </div>
 </div>
 
+<div class="card card-body bg-light">
+  <p>Audio of the conversation:</p>
+  <audio controls preload="none">
+    <% audio = "#{PRIVATE["media_path"]}/audio/bandhistory/stories/interviews/krejci_interview_2019.mp3" %>
+    <source type="audio/mpeg" src="<%= audio %>">
+    <p>Your browser doesn't support HTML5 audio. Here is
+      a <a href="<%= audio %>">link to the audio</a> instead.</p>
+  </audio>
+</div>
 
 
 [ showing photo of himself, Lentz, and another band member planning drill formations on a table ]
@@ -119,11 +128,11 @@
 
 <%= render layout: "stories/accounts/interview_row",
   locals: { label: "Krejci" } do %>
-  [To Emmett Wirth] Tell 'em how much the food was on the train.
+  [To E Wirth] Tell 'em how much the food was on the train.
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
    [ reading from Rose Bowl train menu ] 35 cents for lunch and then for dinner it was 60 cents.
 <% end %>
 
@@ -133,7 +142,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
    The food looks pretty good [ unclear ] Pretty normal stuff on the menu.
 <% end %>
 
@@ -451,7 +460,7 @@
 
 <%= render layout: "stories/accounts/interview_row",
   locals: { label: "Krejci" } do %>
-   Yeah. One of them. Another one was <span data-person="band.per.0095">Mrs. Howe</span>. She’d take, rent out, she had a pretty good sized home, and after, so she’d rent out a room and also board university students. So I, that was, those were interesting times. That’s when I had my bottle of tequila on the dresser in that boarding house. And she’d get up, you know, she’d wake you and say "get in here and have your breakfast, you can’t go to school without breakfast."  Wonderful lady. She was nice, she really was. I’d go in the kitchen and help her once in a while.
+   Yeah. One of them. Another one was Mrs. Howe. She’d take, rent out, she had a pretty good sized home, and after, so she’d rent out a room and also board university students. So I, that was, those were interesting times. That’s when I had my bottle of tequila on the dresser in that boarding house. And she’d get up, you know, she’d wake you and say "get in here and have your breakfast, you can’t go to school without breakfast."  Wonderful lady. She was nice, she really was. I’d go in the kitchen and help her once in a while.
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
@@ -861,7 +870,7 @@
 
 <%= render layout: "stories/accounts/interview_row",
   locals: { label: "Krejci" } do %>
-   I still remember when we’d be out marching in rehearsal. And Don Lentz once in a while would be walking alongside and say "LEFT RIGHT LEFT RIGHT" and I thought to myself, well hell, I’m walking that’s the way I walk! But he was kind of stirring everybody up a little bit.  [to Emmett, sarcastically]  You’re too noisy.
+   I still remember when we’d be out marching in rehearsal. And Don Lentz once in a while would be walking alongside and say "LEFT RIGHT LEFT RIGHT" and I thought to myself, well hell, I’m walking that’s the way I walk! But he was kind of stirring everybody up a little bit.  [to E, sarcastically]  You’re too noisy.
 <% end %>
 
 <hr>
@@ -914,7 +923,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>Yeah, I can kind of recognize him.
+  locals: { label: "E" } do %>Yeah, I can kind of recognize him.
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
@@ -938,7 +947,7 @@
 
 <%= render layout: "stories/accounts/interview_row",
   locals: { label: "Wirth, Mike" } do %>
-   Look Emmett, look at this one, look how grandpa is dressed up.  Like, think about the band members today, he’s wearing a suit!
+   Look E, look at this one, look how grandpa is dressed up.  Like, think about the band members today, he’s wearing a suit!
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
@@ -952,7 +961,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
   So would you use that table?
 <% end %>
 
@@ -972,7 +981,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
    Would you use those lines on the table to represent the yard markers?
 <% end %>
 
@@ -982,7 +991,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
   The football field?
 <% end %>
 
@@ -992,7 +1001,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
   The yard lines?
 <% end %>
 
@@ -1002,7 +1011,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
   So then you would just mark out where they would go, where the people would be marching?
 <% end %>
 
@@ -1012,7 +1021,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
   That’s amazing.
 <% end %>
 
@@ -1027,7 +1036,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
    Now with all the technology you can just do that in a second.
 <% end %>
 
@@ -1040,7 +1049,7 @@
 
 <%= render layout: "stories/accounts/interview_row",
   locals: { label: "Krejci" } do %>
-   <span data-person="band.per.0096">Sichacha</span>?  [TODO spelling]
+   Sichacha [spelling unknown]
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
@@ -1050,7 +1059,7 @@
 
 <%= render layout: "stories/accounts/interview_row",
   locals: { label: "Wirth, Mike" } do %>
-   Sounds right.  I dunno. I do remember the name of the <span data-person="band.per.0097">Colonel Scotch</span> that you helped managed for him in supply.  <span data-person="band.per.0098">Colonel Gingerely</span>. [TODO spelling]
+   Sounds right.  I dunno. I do remember the name of the Colonel Scotch [unknown spelling] that you helped managed for him in supply. Colonel Gingerely [spelling unknown].
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
@@ -1114,7 +1123,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
    In the Philippines.
 <% end %>
 
@@ -1129,7 +1138,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
    Tell her how you guys met. Mom and dad.
 <% end %>
 
@@ -1139,8 +1148,8 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
-   Taplass [TODO spelling?]
+  locals: { label: "E" } do %>
+   [unclear]
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
@@ -1154,17 +1163,17 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
-   Taplass.
+  locals: { label: "E" } do %>
+   [unclear]
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
   locals: { label: "Krejci, Jan" } do %>
-   Taplass.
+   [unclear]
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
    That was exciting.
 <% end %>
 
@@ -1184,7 +1193,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
    She was a telephone operator in WWII.
 <% end %>
 
@@ -1204,7 +1213,7 @@
 <% end %>
 
 <%= render layout: "stories/accounts/interview_row",
-  locals: { label: "Wirth, Emmett" } do %>
+  locals: { label: "E" } do %>
   I remember when you used to-
 <% end %>
 
