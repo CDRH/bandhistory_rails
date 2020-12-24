@@ -1,0 +1,53 @@
+
+<%# OVERRIDE FROM ORCHID %>
+
+<% if @res.count > 0 %>
+  <div class="flex_row buffer-bottom-sm">
+    <% @res.items.each do |item| %>
+      <%= link_to search_item_link(item), class: "searchResults flex_col-md" do %>
+        <div class="search_results_info">
+          <span class="link_style"><%= title_label(item) %></span>
+          <div class="search_item_info">
+            <ul class="search_item_metadata">
+              <% if item["date_display"].present? %>
+                <li>
+                  <%= metadata(item, t("search.results.item.date",
+                    default: "Date"), "date_display", link: false) %>
+                </li>
+              <% end %>
+              <% if item["publisher"].present? %>
+                <li>
+                  <%= metadata(item, t("search.results.item.publisher",
+                    default: "Publisher"), "publisher", link: false) %>
+                </li>
+              <% end %>
+              <% if item["keywords"].present? %>
+                <li>
+                  <strong>Topics:</strong> <%= item["keywords"].sort.join(" | ") %>
+                </li>
+              <% end %>
+              <% if item["person.name"].present? %>
+                <li>
+                  <%= metadata(item, t("search.results.item.person",
+                    default: "testing"), "person.name", link: false) %>
+                </li>
+              <% end %>
+            </ul>
+            <% if item["highlight"].present? %>
+              <div class="search_results_text">
+                <% item["highlight"].each do |key, hls| %>
+                  <div class="search_results_highlights">
+    
+                    <% hls.each do |hl| %>
+                      <p><%= hl.html_safe %></p>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div><%# /search_results_text %>
+            <% end %> <%# /item["highlight"].present? %>
+          </div> <%# /search_item_info %>
+        </div><%# /search_results_info %>
+      <%end%><%# /a searchResults %>
+    <% end %><%# /res.items.each %>
+  </div><%# /flex_row %>
+<% end %><%# /if %>

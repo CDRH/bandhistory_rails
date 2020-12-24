@@ -1,0 +1,21 @@
+<%# TODO set up active class %>
+
+<div class="filters about-nav">
+  <div class="filters-topic">
+    <div class="filter-buttons">
+
+      <% nav_items = {
+        "Project Team" => :about,
+        "Acknowledgements" => :about_thanks,
+        "About the Archives" => :about_archives,
+        "Website Technology" => :about_tech,
+        "Project History" => :about_history
+      } %>
+
+      <% nav_items.each do |item, link| %>
+        <%= link_to item, link, class: about_nav_class(link.to_s) %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

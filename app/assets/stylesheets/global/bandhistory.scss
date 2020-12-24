@@ -206,6 +206,18 @@ footer {
   font-size: 1.8em;
 }
 
+/* *********** */
+/* About Pages */
+/* *********** */
+
+.about-nav {
+  margin: 1em 0;
+}
+
+.about_staff {
+  font-size: 1.3em;
+}
+
 /* ****************** */
 /* Section Navigation */
 /* ****************** */
@@ -306,9 +318,6 @@ $dark-overlay: rgba(0,0,0,0.7);
 .section-nav.section-nav-multimedia-images .section-nav-image {
   background: image-url('nav_backgrounds/images.jpg');
 }
-.section-nav.section-nav-multimedia-documents .section-nav-image {
-  background: image-url('nav_backgrounds/default02.jpg');
-}
 
 // Sights & Sounds > Audio
 
@@ -335,6 +344,15 @@ $dark-overlay: rgba(0,0,0,0.7);
 .section-nav.section-nav-multimedia-people .section-nav-image {
   background: image-url('nav_backgrounds/people.jpg');
 }*/
+
+// Documents
+
+.section-nav.section-nav-documents .section-nav-image {
+  background: image-url('nav_backgrounds/default02.jpg');
+}
+.section-nav.section-nav-documents-newspapers .section-nav-image {
+  background: image-url('nav_backgrounds/newspapers.jpg');
+}
 
 // Stories
 
@@ -507,6 +525,10 @@ a.flex-item {
   }
 }
 
+.filter-buttons {
+  margin-bottom: 10px;
+}
+
 .filters-topic button, .filters-decade button {
   margin: 0 5px 8px 0
 }
@@ -593,19 +615,16 @@ a.btn {
   }
 }
 
-
 // new
 .navbar-brand {
   line-height: 1.2em;
   float: none;
 }
 
-/* line 594, app/assets/stylesheets/global/bandhistory_rails.scss */
 .site-title-container a {
   text-decoration: none;
 }
 
-/* line 598, app/assets/stylesheets/global/bandhistory_rails.scss */
 #header .navbar-nav {
   display: flex;
   flex-wrap: wrap;
@@ -739,4 +758,28 @@ a.btn {
 
 .index_spacer a {
   box-shadow: none;
+}
+
+/* NEWSPAPER SHOW PAGE */
+
+.no-image-newspaper {
+  width: 200px;
+  // allows for dimming of image when hovered
+  -webkit-filter: brightness(100%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1 ease;
+  transition: all 1s ease;
+  &:hover {
+    -webkit-filter: brightness(50%);
+  }
+}
+
+.publisher {
+  margin-bottom: 20px;
+}
+
+.section_newspapers.action_show h1 {
+  font-size: 32px;
 }
