@@ -377,14 +377,17 @@ $dark-overlay: rgba(0,0,0,0.7);
 
 // Stories > Interviews
 
-.section-nav.section-nav-stories-lentz .section-nav-image {
-  background-color: #1d1d1d !important;
-  background: image-url('nav_backgrounds/lentz.jpg');
-}
 .section-nav.section-nav-stories-johnson .section-nav-image {
   background: image-url('nav_backgrounds/johnson.jpg');
   background-color: #251f1d !important;
   background-size: contain !important;
+}
+.section-nav.section-nav-stories-krejci .section-nav-image {
+  background: image-url('nav_backgrounds/krejci.jpg');
+}
+.section-nav.section-nav-stories-lentz .section-nav-image {
+  background-color: #1d1d1d !important;
+  background: image-url('nav_backgrounds/lentz.jpg');
 }
 .section-nav.section-nav-stories-steffens .section-nav-image {
   background: image-url('nav_backgrounds/steffens.jpg');
@@ -684,6 +687,43 @@ a.btn {
       margin-left: .2em;
     }
   }
+}
+
+/*****************/
+/* DOCUMENT ITEM */
+/*****************/
+
+.hr {
+  border-top: 2px solid #aaa;
+  clear: right;
+  display: block;
+  height: 0;
+  margin: 10px 0 0 0;
+  padding: 0px 0 0 0;
+  width: 100%;
+}
+
+.inline_figure {
+  background-color: $gray-100;
+  border: 1px solid $secondary;
+}
+
+.metadata ul {
+  list-style: none;
+}
+
+span.pageimage {
+  border-bottom: 2px solid #aaa;
+  border-left: 2px solid #aaa;
+  border-right: 2px solid #aaa;
+  clear: both;
+  float: right;
+  margin: 0 0 1em .5em;
+  padding: 0;
+}
+
+.tei_ab {
+  display: block;
 }
 
 // Search
