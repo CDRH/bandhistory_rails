@@ -33,10 +33,8 @@
 <div class="videos-container flex-container">
   <% @res.items.each do |item| %>
     <% html_id = item["identifier"].gsub(".", "") %>
-    <% year = item["date"].present? ? item["date"][0,4] : nil %>
-    <% decade = year ? "#{year[0,3]}0" : nil %>
     <button type="button" class="video flex-item" data-toggle="modal" data-target="#<%= html_id %>">
-      <h3><%= year %></h3>
+      <h3><%= item["date_display"] %></h3>
      
       <%= image_tag iiif(item["image_id"]), class: "thumbnail" %>
       <p><%= item["description"] %></p>
@@ -49,7 +47,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="<%= item["identifier"] %>"><%= year %></h4>
+            <h4 class="modal-title" id="<%= item["identifier"] %>"><%= item["date_display"] %></h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
