@@ -3,22 +3,22 @@
 <h1>Drill</h1>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8">
     <p class="lead">
-      What is a marching band without drill? Although early in the band's history, the band followed the drum major's directions for simple formations and movements, more advanced drill has often been planned and recorded on paper.
+      What is a marching band without drill? Although early in the band's history, precision military drill was dictated by officer instructions, and later by signals from the drum major, over time advanced drill has been planned and recorded on paper.
     </p>
     <p>
-      The 1937 Band Manual <%# TODO link %> is an excellent resource for those interested in pre-WWII band discipline, charts, and music.
+      The <%= link_to "1937 Band Manual", drill_item_path(id: "band.doc.0002") %> is an excellent resource for those interested in pre-WWII band discipline, charts, and music.
     </p>
   </div>
-  <!-- <div class="col-md-3">
-    <%# TODO different image %>
-    <%# image_tag "newspaper.jpg", alt: "Daily Nebraskan front page with photo of the band performing with headline Band travels to regular-season away game" %>
-  </div> -->
+  <div class="col-md-4">
+    <%= image_tag "drill.jpg", alt: "Page from 1937 band manual with instructions to spell HUSKERS" %>
+    <p>1937 Band Manual</p>
+  </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-6">
 
     <h2 class="text-center">Search</h2>
 
@@ -34,6 +34,11 @@
       </span>
     <% end %>
     <%= render_overridable("items", "help") %>
-
+  </div>
+  <div class="col-md-6">
+    <h2 class="text-center">Browse</h2>
+    <div class="filter-buttons">
+      <%= link_to "Browse All Drill Documents", drill_search_path, class: "btn btn-primary btn-filter", role: "button" %>
+    </div>
   </div>
 </div>
