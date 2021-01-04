@@ -3,7 +3,7 @@ default: &default
   api_options:
     # only return section items by default
     f:
-      - subcategory|Drill
+      - subcategory|Drill & Programs
     # sorting and response number
     sort:
       - date|asc
@@ -30,10 +30,7 @@ default: &default
         label: Topics
         flags:
           - search_filter
-      publisher:
-        label: Periodical
-        flags:
-          - search_filter
+
 # Add fields for other languages with their language code
 #    es:
 #      category:
