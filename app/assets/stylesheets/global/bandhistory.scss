@@ -708,8 +708,23 @@ a.btn {
   border: 1px solid $secondary;
 }
 
+.metadata {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  padding: .5em;
+}
+
 .metadata ul {
   list-style: none;
+  margin: 0;
+}
+
+.page_item .slbCaption {
+  background-color: $white;
+  color: $black;
+  font-size: 1em;
+  overflow: visible;
 }
 
 span.pageimage {
@@ -720,6 +735,10 @@ span.pageimage {
   float: right;
   margin: 0 0 1em .5em;
   padding: 0;
+}
+
+span.underline {
+  text-decoration-line: underline;
 }
 
 .tei_ab {

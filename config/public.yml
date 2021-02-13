@@ -76,11 +76,10 @@ default: &default
         label: Year
         flags:
           - search_filter
-      # hide this until we encode all people
-      # person.name:
-      #   label: People
-      #   flags:
-      #     - search_filter
+      person.name:
+        label: People
+        flags:
+          - search_filter
       publisher:
         label: Publisher
         flags:
