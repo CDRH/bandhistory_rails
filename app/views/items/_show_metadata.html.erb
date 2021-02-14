@@ -11,7 +11,7 @@
     <% if @res["date_display"].present? %>
       <li>
         <%= metadata(@res, t("item.metadata.date", default: "Date"),
-          "date_display") %>
+          "date_display", link: false) %>
       </li>
     <% end %>
     <% if @res["creator"].present? %>
