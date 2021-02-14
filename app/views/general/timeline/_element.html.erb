@@ -6,15 +6,14 @@
     </h3>
 
     <% if image.present? %>
-      <% img_path = "photographs%2F#{image}" %>
       <div class="timeline-image">
         <% title = image_caption %>
         <% title += "<br/>#{image_attr}" if image_attr %>
         <% title += "<br/><a href='#{image_path(id: image_link)}'>View Photo Information</a>" if image_link %>
         <a class="gallery"
-          href="<%= url_for iiif(img_path, size: "!800,800") %>"
+          href="<%= url_for iiif(image, size: "!800,800") %>"
           title="<%= title %>">
-          <%= image_tag iiif(img_path, size: "!350,500"), class: "preview", alt: "#{image_caption} #{image_attr}" %>
+          <%= image_tag iiif(image, size: "!350,500"), class: "preview", alt: "#{image_caption} #{image_attr}" %>
           <span class="timeline-imagecaption">View larger image</span>
         </a>
       </div>

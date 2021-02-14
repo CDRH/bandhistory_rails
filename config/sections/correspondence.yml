@@ -30,10 +30,6 @@ default: &default
         label: Topics
         flags:
           - search_filter
-      publisher:
-        label: Periodical
-        flags:
-          - search_filter
 # Add fields for other languages with their language code
 #    es:
 #      category:

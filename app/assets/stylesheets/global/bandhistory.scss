@@ -708,8 +708,33 @@ a.btn {
   border: 1px solid $secondary;
 }
 
+.metadata {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  padding: .5em;
+}
+
 .metadata ul {
   list-style: none;
+  margin: 0;
+}
+
+.page_item .slbCaption {
+  background-color: $white;
+  color: $black;
+  font-size: 1em;
+  overflow: visible;
+}
+
+.page_item .tei_list_rend_simple {
+  list-style: none;
+}
+
+.tei_p_rend_warning {
+  background-color: $gray-200;
+  border-radius: 10px;
+  padding: .5em;
 }
 
 span.pageimage {
@@ -720,6 +745,10 @@ span.pageimage {
   float: right;
   margin: 0 0 1em .5em;
   padding: 0;
+}
+
+span.underline {
+  text-decoration-line: underline;
 }
 
 .tei_ab {
