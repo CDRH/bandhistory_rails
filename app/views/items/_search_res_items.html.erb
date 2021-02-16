@@ -51,18 +51,6 @@
                     default: "Source"), "source", link: false) %>
                 </li>
               <% end %>
-              <% if item["publisher"].present? %>
-                <li>
-                  <%= metadata(item, t("search.results.item.publisher",
-                    default: "Publisher"), "publisher", link: false) %>
-                </li>
-              <% end %>
-              <% if item["rights"].present? %>
-                <li>
-                  <%= metadata(item, t("search.results.item.rights",
-                    default: "Rights"), "rights", link: false) %>
-                </li>
-              <% end %> 
             </ul>
             <% if item["highlight"].present? %>
               <div class="search_results_text">
