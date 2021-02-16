@@ -731,11 +731,6 @@ a.btn {
   list-style: none;
 }
 
-.tei_p_rend_warning {
-  background-color: $gray-200;
-  border-radius: 10px;
-  padding: .5em;
-}
 
 span.pageimage {
   border-bottom: 2px solid #aaa;
@@ -752,6 +747,16 @@ span.underline {
 }
 
 .tei_ab {
+  display: block;
+}
+
+.tei_p_rend_warning {
+  background-color: $gray-200;
+  border-radius: 10px;
+  padding: .5em;
+}
+
+.tei_dateline, .tei_salute, .tei_signed {
   display: block;
 }
 
