@@ -44,22 +44,21 @@
 </div>
 
 <% images = [
-  { id: "130815-00031.jpg", label: "On Parade Album, Front Cover" },
-  { id: "130815-00033.jpg", label: "On Parade Album, Inside Cover" },
-  { id: "130815-00034.jpg", label: "On Parade Album, Side 1A" },
-  { id: "130815-00035.jpg", label: "On Parade Album, Side 1B" },
-  { id: "130815-00036.jpg", label: "On Parade Album, Side 2A" },
-  { id: "130815-00037.jpg", label: "On Parade Album, Side 2B" },
-  { id: "130815-00032.jpg", label: "On Parade Album, Back Cover" },
+  { id: "570904-00031.jpg", label: "On Parade Album, Front Cover" },
+  { id: "570904-00033.jpg", label: "On Parade Album, Inside Cover" },
+  { id: "570904-00034.jpg", label: "On Parade Album, Side 1A" },
+  { id: "570904-00035.jpg", label: "On Parade Album, Side 1B" },
+  { id: "570904-00036.jpg", label: "On Parade Album, Side 2A" },
+  { id: "570904-00037.jpg", label: "On Parade Album, Side 2B" },
+  { id: "570904-00032.jpg", label: "On Parade Album, Back Cover" },
 ] %>
 
 <div class="album_gallery">
   <% images.each do |image| %>
-    <% img_path = "photographs/#{image[:id]}" %>
     <a class="gallery"
-      href="<%= iiif(img_path, size: "!800,800") %>"
+      href="<%= iiif(image[:id], size: "!800,800") %>"
       title="<%= image[:label] %>">
-      <%= image_tag iiif(img_path), class: "preview", alt: image[:label], "data-image": img_path  %>
+      <%= image_tag iiif(image[:id]), class: "preview", alt: image[:label], "data-image": image[:id] %>
     </a>
   <% end %>
 </div>
