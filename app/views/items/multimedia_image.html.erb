@@ -1,38 +1,43 @@
 <% @title = @res["title"] %>
+<%= link_to "Browse #{@res["topics"].first} images",
+  image_topic_path(@res["topics"].first) %>
 
 <% year = @res["date"].present? ? @res["date"][0,4] : "undated" %>
 <h2><%= @res["title"] %> (<%= year %>)</h2>
 
-<%= link_to "Browse #{@res["topics"].first} images",
-  image_topic_path(@res["topics"].first) %>
+<div class="row image-metadata">
+  <div class="col-md-12">
+    <% if @res["date_display"].present? %>
+      <p>
+        <%= metadata(@res, t("item.metadata.date", default: "Date"),
+          "date_display", link: false) %>
+      </p>
+    <% end %>
+    <% if @res["creator"].present? %>
+      <p>
+        <%= metadata(@res, t("item.metadata.creators", default: "Author(s)"),
+          "creator.name", link: false) %>
+      </p>
+    <% end %>
+    <% if @res["description"].present? %>
+      <p>
+        <%= metadata(@res, t("item.metadata.description", default: "Description"),
+          "description", link: false) %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
 
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-8">
     <%= image_tag iiif(@res["image_id"], size: "!800,800"),
       alt: @res["title"]
     %>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <div class="image_metadata">
       <ul>
-        <% if @res["date_display"].present? %>
-          <li>
-            <%= metadata(@res, t("item.metadata.date_display", default: "Date Display"),
-            "date_display", link: false) %>
-          </li>
-        <% end %>
-        <% if @res["description"].present? %>
-          <li>
-            <%= metadata(@res, t("item.metadata.description", default: "Description"),
-              "description", link: false) %>
-          </li>
-        <% end %>
-        <% if @res["creator"].present? %>
-          <li>
-            <%= metadata(@res, t("item.metadata.creators", default: "Author(s)"),
-              "creator.name", link: false) %>
-          </li>
-        <% end %>
         <% if @res["identifier"].present? %>
           <li>
             <%= metadata(@res, "Image Identifier",
