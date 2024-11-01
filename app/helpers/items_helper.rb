@@ -5,32 +5,32 @@ module ItemsHelper
   # because of how the link is being structured, this method needs to return only
   # the path and NOT an entire link, differing from the orchid expected behavior
   def search_item_link(item)
-    subcategory = item["subcategory"].downcase
+    category2 = item["category2"].downcase
 
-    if subcategory == "audio"
+    if category2 == "audio"
       id = item["identifier"].split(".").last
       path = audio_item_path(id: id)
 
-    elsif subcategory == "correspondence & papers"
+    elsif category2 == "correspondence & papers"
       path = correspondence_item_path(id: item["identifier"])
 
-    elsif subcategory == "drill"
+    elsif category2 == "drill"
       path = drill_item_path(id: item["identifier"])
 
-    elsif subcategory == "features"
+    elsif category2 == "features"
       id = item["identifier"].split(".").last
       path = feature_path(id: id)
 
-    elsif subcategory == "footage"
+    elsif category2 == "footage"
       path = footage_clip_path(id: item["identifier"])
 
-    elsif subcategory == "images"
+    elsif category2 == "images"
       path = image_path(id: item["identifier"])
 
-    elsif subcategory == "newspaper"
+    elsif category2 == "newspaper"
       path = newspapers_item_path(id: item["identifier"])
 
-    elsif subcategory == "personal accounts"
+    elsif category2 == "personal accounts"
       id = item["identifier"].split(".").last
       path = account_path(id: id)
 

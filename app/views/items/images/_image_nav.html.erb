@@ -7,10 +7,10 @@
       <%= link_to :images, class: "btn btn-filter #{all_btn}" do %>
         All <span class="badge">X</span>
       <% end %>
-      <% @facets.facets["topics"].each do |facet, num| %>
+      <% @facets.facets["topics"].each do |facet, results| %>
         <% btn_class = topic_selected?(facet) ? "btn-primary" : "btn-info" %>
-        <%= link_to image_topic_path({ topic: facet }), class: "btn btn-filter #{btn_class}" do %>
-          <%= facet.titleize %> <span class="badge"><%= num %></span>
+        <%= link_to image_topic_path({ topic: facet.downcase }), class: "btn btn-filter #{btn_class}" do %>
+          <%= facet.titleize %> <span class="badge"><%= results["num"] %></span>
         <% end %>
       <% end %>
     </div>

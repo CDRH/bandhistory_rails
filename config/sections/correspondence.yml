@@ -3,7 +3,7 @@ default: &default
   api_options:
     # only return section items by default
     f:
-      - subcategory|Correspondence & Papers
+      - category2|Correspondence & Papers
     # sorting and response number
     sort:
       - date|asc

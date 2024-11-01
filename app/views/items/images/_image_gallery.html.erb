@@ -12,9 +12,9 @@
       <h3><%= image["title"] %> (<%= year %>)</h3>
 
       <a class="gallery"
-        href="<%= iiif(image["image_id"], size: "!800,800") %>"
+        href="<%= iiif(image["cover_image"], size: "!800,800") %>"
         title="<%= label %>">
-        <%= image_tag iiif(image["image_id"]), class: "thumbnail", alt: image["title"] %>
+        <%= image_tag iiif(image["cover_image"]), class: "thumbnail", alt: image["title"] %>
         <span class="imagecaption">View larger image</span>
       </a>
 

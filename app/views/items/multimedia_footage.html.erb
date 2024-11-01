@@ -8,7 +8,7 @@
 
 <p>Browsing this silent film through the decades, the change to drill styles is particularly noticeable. Also present are the alterations to Memorial Stadium and traditions such as the card section.</p>
 
-<p>To search footage by date, text, or more, please use the <%= link_to "advanced search", search_path({ "f" => ["subcategory|Footage"] }) %> features.</p>
+<p>To search footage by date, text, or more, please use the <%= link_to "advanced search", search_path({ "f" => ["category2|Footage"] }) %> features.</p>
 
 <div class="filters">
   <div class="filters-topic">
@@ -18,10 +18,10 @@
       <%= link_to :footage, class: "btn btn-filter #{all_btn}" do %>
         All <span class="badge">X</span>
       <% end %>
-      <% @facets.facets["keywords"].each do |keyword, num| %>
+      <% @facets.facets["keywords"].each do |keyword, results| %>
         <% btn_class = facet_selected?("keywords", keyword) ? "btn-primary" : "btn-info" %>
         <%= link_to footage_path({ "f" => ["keywords|#{keyword}"] }), class: "btn btn-filter #{btn_class}" do %>
-          <%= keyword.titleize %> <span class="badge"><%= num %></span>
+          <%= keyword.titleize %> <span class="badge"><%= results["num"] %></span>
         <% end %>
       <% end %>
     </div>
@@ -36,7 +36,7 @@
     <button type="button" class="video flex-item" data-toggle="modal" data-target="#<%= html_id %>">
       <h3><%= item["date_display"] %></h3>
      
-      <%= image_tag iiif(item["image_id"]), class: "thumbnail" %>
+      <%= image_tag iiif(item["cover_image"]), class: "thumbnail" %>
       <p><%= item["description"] %></p>
       <%= link_to "More Information", footage_clip_path(id: item["identifier"]), class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
     </button>
@@ -53,7 +53,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <video controls preload="none" poster="<%= iiif(item["image_id"], size: "!500,500") %>">
+            <video controls preload="none" poster="<%= iiif(item["cover_image"], size: "!500,500") %>">
               <% video_link = "#{PRIVATE["media_path"]}/video/bandhistory/footage/#{item["identifier"]}.mp4" %>
               <source src="<%= video_link %>" type="video/mp4">
               <p>Your browser doesn't support HTML5 video. Here is
