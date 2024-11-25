@@ -26,10 +26,10 @@
           "person.name") %>
       </li>
     <% end %>
-    <% if @res["source"].present? %>
+    <% if @res["has_source"] && @res["has_source"]["title"].present? %>
       <li>
-        <%= metadata(@res, t("item.metadata.source", default: "Source"),
-          "source", link: false) %>
+        <%= metadata(@res, t("item.metadata.has_source.title", default: "Source"),
+          "has_source.title", link: false) %>
       </li>
     <% end %>
     <% if @res["rights_holder"].present? %>

@@ -44,16 +44,16 @@
               "identifier", link: false) %>
           </li>
         <% end %>
-        <% if @res["source"].present? %>
+        <% if @res["rights_uri"].present? %>
           <li>
-            <%= metadata(@res, t("item.metadata.source", default: "Source"),
-              "source", link: false) %>
+            <%= metadata(@res, t("item.metadata.rights_uri", default: "Source"),
+              "rights_uri", link: false) %>
           </li>
         <% end %>
-        <% if @res["citation"] && @res["citation"]["publisher"].present? %>
+        <% if @res["rights_holder"].present? %>
           <li>
-            <%= metadata(@res, t("item.metadata.citation.publisher", default: "Publisher"),
-              "citation.publisher", link: false) %>
+            <%= metadata(@res, t("item.metadata.rights_holder", default: "Publisher"),
+              "rights_holder", link: false) %>
           </li>
         <% end %>
         <% if @res["rights"].present? %>
