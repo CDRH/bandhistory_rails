@@ -27,7 +27,7 @@
               <% if item["category2"].present? %>
                 <li>
                   <%= metadata(item, t("search.results.item.category2",
-                    default: "category2"), "category2", link: false) %>
+                    default: "Subcategory"), "category2", link: false) %>
                 </li>
               <% end %>
               <%# format can be a multivalued or single keyword field %>
@@ -44,12 +44,21 @@
                     default: "Creator"), "creator.name", link: false) %>
                 </li>
               <% end %>
-              <%# source can be a multivalued or single keyword field %>
-              <% if item["has_source"] && item["has_source"]["title"].present? %>
-                <li>
-                  <%= metadata(item, t("search.results.item.has_source.title",
+              <%# source varies depending on category %>
+              <% if item["category"] == "Documents" || item["category2"] == "Footage" %>
+                <% if item["has_source"].present? %>
+                  <li>
+                    <%= metadata(item, t("search.results.item.has_source.title",
                     default: "Source"), "has_source.title", link: false) %>
-                </li>
+                  </li>
+                <% end %>
+              <% else %>
+                <% if item["rights_uri"].present? %>
+                  <li>
+                    <%= metadata(item, t("search.results.item.rights_uri",
+                    default: "Source"), "rights_uri", link: false) %>
+                  </li>
+                <% end %>
               <% end %>
             </ul>
             <% if item["highlight"].present? %>

@@ -26,16 +26,16 @@
           "person.name") %>
       </li>
     <% end %>
-    <% if @res["source"].present? %>
+    <% if @res["has_source"] && @res["has_source"]["title"].present? %>
       <li>
-        <%= metadata(@res, t("item.metadata.source", default: "Source"),
-          "source", link: false) %>
+        <%= metadata(@res, t("item.metadata.has_source.title", default: "Source"),
+          "has_source.title", link: false) %>
       </li>
     <% end %>
-    <% if @res["citation"] && @res["citation"]["publisher"].present? %>
+    <% if @res["rights_holder"].present? %>
       <li>
-        <%= metadata(@res, t("item.metadata.citation.publisher", default: "Repository"),
-          "citation.publisher", link: false) %>
+        <%= metadata(@res, t("item.metadata.rights_holder", default: "Repository"),
+          "rights_holder", link: false) %>
       </li>
     <% end %>
     <%# When copying this template into projects, consider adding rel tag to the source link
