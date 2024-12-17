@@ -19,5 +19,10 @@ module BandhistoryRails
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.active_record.yaml_column_permitted_classes = [Regexp]
+
+    # Local changes
+    #
+    # Enable templates for error pages rather than static HTML files
+    config.exceptions_app = self.routes
   end
 end
