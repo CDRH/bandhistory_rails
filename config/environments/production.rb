@@ -135,5 +135,5 @@ Rails.application.configure do
   config.log_level = :warn
 
   # Allow access via public domain
-  config.hosts << "africanpoetics.unl.edu"
+  config.hosts << "bandhistory.unl.edu"
 end
