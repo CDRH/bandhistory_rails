@@ -3,7 +3,7 @@ default: &default
   api_options:
     # only return section items by default
     f:
-      - subcategory|Newspaper
+      - category2|Newspaper
     # sorting and response number
     sort:
       - date|asc
@@ -30,7 +30,7 @@ default: &default
         label: Topics
         flags:
           - search_filter
-      publisher:
+      citation.publisher:
         label: Periodical
         flags:
           - search_filter

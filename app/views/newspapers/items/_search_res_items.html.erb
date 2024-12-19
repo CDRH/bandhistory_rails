@@ -15,10 +15,10 @@
                     default: "Date"), "date_display", link: false) %>
                 </li>
               <% end %>
-              <% if item["publisher"].present? %>
+              <% if item["citation"].present? && item["citation"]["publisher"].present? %>
                 <li>
-                  <%= metadata(item, t("search.results.item.publisher",
-                    default: "Publisher"), "publisher", link: false) %>
+                  <%= metadata(item, t("search.results.item.citation.publisher",
+                    default: "Publisher"), "citation.publisher", link: false) %>
                 </li>
               <% end %>
               <% if item["keywords"].present? %>

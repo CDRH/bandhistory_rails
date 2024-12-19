@@ -3,13 +3,13 @@ ItemsController.class_eval do
   def multimedia_footage
     options = params.permit!.deep_dup
     options["f"] = [] if options["f"].blank?
-    options["f"] << "subcategory|Footage"
+    options["f"] << "category2|Footage"
 
     @facets = $api.query({
       "facet" => "keywords",
       "facet_sort" => "term|asc",
       "num" => 0,
-      "f" => ["subcategory|Footage"]
+      "f" => ["category2|Footage"]
     })
 
     @res = $api.query(options)
@@ -28,7 +28,7 @@ ItemsController.class_eval do
   def multimedia_images
     options = params.permit!.deep_dup
     options["f"] = [] if options["f"].blank?
-    options["f"] << "subcategory|Images"
+    options["f"] << "category2|Images"
     if params["topic"].present?
       options["f"] << "topics|#{params["topic"]}"
       @title = "#{params["topic"].titleize} Images"
@@ -40,7 +40,7 @@ ItemsController.class_eval do
       "facet" => "topics",
       "facet_sort" => "term|asc",
       "num" => 0,
-      "f" => ["subcategory|Images"]
+      "f" => ["category2|Images"]
     })
     @res = $api.query(options)
     @route_path = "images_path"

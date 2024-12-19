@@ -57,7 +57,7 @@
           } %>
 
           <% nav_items.each do |item, date| %>
-            <%= link_to "#{item} (#{date})", newspapers_search_path({ f: ["publisher|#{item}"] }), class: "btn btn-filter btn-warning" %>
+            <%= link_to "#{item} (#{date})", newspapers_search_path({ f: ["citation.publisher|#{item}"] }), class: "btn btn-filter btn-warning" %>
           <% end %>
         </div>
       </div>

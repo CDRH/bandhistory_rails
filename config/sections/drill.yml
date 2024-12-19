@@ -3,7 +3,7 @@ default: &default
   api_options:
     # only return section items by default
     f:
-      - subcategory|Drill & Programs
+      - category2|Drill & Programs
     # sorting and response number
     sort:
       - date|asc

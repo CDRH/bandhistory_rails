@@ -31,7 +31,7 @@
 
 <div class="row">
   <div class="col-md-8">
-    <%= image_tag iiif(@res["image_id"], size: "!800,800"),
+    <%= image_tag iiif(@res["cover_image"], size: "!800,800"),
       alt: @res["title"]
     %>
   </div>
@@ -44,16 +44,16 @@
               "identifier", link: false) %>
           </li>
         <% end %>
-        <% if @res["source"].present? %>
+        <% if @res["rights_uri"].present? %>
           <li>
-            <%= metadata(@res, t("item.metadata.source", default: "Source"),
-              "source", link: false) %>
+            <%= metadata(@res, t("item.metadata.rights_uri", default: "Source"),
+              "rights_uri", link: false) %>
           </li>
         <% end %>
-        <% if @res["publisher"].present? %>
+        <% if @res["rights_holder"].present? %>
           <li>
-            <%= metadata(@res, t("item.metadata.publisher", default: "Publisher"),
-              "publisher", link: false) %>
+            <%= metadata(@res, t("item.metadata.rights_holder", default: "Publisher"),
+              "rights_holder", link: false) %>
           </li>
         <% end %>
         <% if @res["rights"].present? %>
