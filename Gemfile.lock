@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/CDRH/orchid
-  revision: 935a6590fbda7015db780606be9a5084275e7f2d
+  revision: d0b4115e23367f2b0fc02712259683234b801e4b
   branch: local_testing
   specs:
     orchid (3.1.1)
