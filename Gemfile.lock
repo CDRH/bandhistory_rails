@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/CDRH/orchid
-  revision: 935a6590fbda7015db780606be9a5084275e7f2d
-  branch: local_testing
+  revision: ecd1599f711fc1f0edb713f9980513a9d0586020
+  tag: v4.1.0
   specs:
-    orchid (3.1.1)
-      rails (> 6.1.7)
+    orchid (4.0.0)
+      rails (> 6.1, < 7.0)
 
 GEM
   remote: https://rubygems.org/
@@ -260,7 +260,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.6p260
+   ruby 3.1.7p261
 
 BUNDLED WITH
    2.6.1
