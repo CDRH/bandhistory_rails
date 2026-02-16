@@ -778,11 +778,10 @@ span.underline {
   color: $gray-900; //overwrite link color
   display: flex;
   padding: 1em 0 0 0;
-  text-decoration: none;
+  text-decoration: none !important;
   &:hover {
     background-color: $gray-100;
     color: $gray-900; //overwrite link color
-    text-decoration: none;
     .link_style {
       color: $link-hover-color;
     }
@@ -821,6 +820,13 @@ span.underline {
   padding: 0;
   li {
     list-style-type: none;
+    ul {
+      display: inline;
+      padding-left: 0;
+      li {
+        display: inline;
+      }
+    }
   }
 }
 
