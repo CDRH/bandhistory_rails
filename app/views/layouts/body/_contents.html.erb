@@ -1,4 +1,6 @@
 <main class="main-content" id="content-wrapper" tabindex="-1">
-  <%= render_overridable("layouts/body", "flash") %>
-  <%= yield %>
+  <div class="container">
+    <%= render_overridable("layouts/body", "flash") %>
+    <%= yield %>
+  </div>
 </main>
