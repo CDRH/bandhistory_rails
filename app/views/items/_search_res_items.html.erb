@@ -7,11 +7,11 @@
       <%= link_to search_item_link(item), class: "searchResults flex_col-md" do %>
         <div class="search_results_image">
           <% if item["cover_image"] %>
-            <%= image_tag iiif(item["cover_image"]) %>
+            <%= image_tag iiif(item["cover_image"]), alt: "First page of #{title_label(item)}" %>
           <% elsif item["category2"] == "Newspaper" %>
-            <%= image_tag "no_image_newspaper.jpg", size: "150" %>
+            <%= image_tag "no_image_newspaper.jpg", size: "150", alt: "Generic newspaper image with 'no image' text" %>
           <% else %>
-            <%= image_tag "no_image.png", size: "150" %>
+            <%= image_tag "no_image.png", size: "150", alt: "'No image' text on black background" %>
           <% end %>
         </div>
         <div class="search_results_info">
