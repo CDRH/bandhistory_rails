@@ -3,7 +3,7 @@
   image_topic_path(@res["topics"].first) %>
 
 <% year = @res["date"].present? ? @res["date"][0,4] : "undated" %>
-<h2><%= @res["title"] %> (<%= year %>)</h2>
+<h1><%= @res["title"] %> (<%= year %>)</h1>
 
 <div class="row image-metadata">
   <div class="col-md-12">
