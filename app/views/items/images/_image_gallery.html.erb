@@ -1,5 +1,6 @@
-<% @ext_css = add_assets(@ext_css, ["simpleLightbox.min", "timeline"] ) %>
-<% @ext_js = add_assets(@ext_js, ["simpleLightbox.min"] ) %>
+<% @ext_css = add_assets(@ext_css, ["fancybox.min", "timeline"] ) %>
+<% @ext_js = add_assets(@ext_js, ["fancybox"] ) %>
+<% @inline_js = ['$(function() {$(".gallery").fancybox();});'] %>
 
 <div class="images-container flex-container">
   <% images.each do |image| %>
@@ -31,7 +32,3 @@
   </div>
   <% end %>
 </div>
-
-<script>
-  new SimpleLightbox({elements: '.gallery'});
-</script>

@@ -1,7 +1,8 @@
 <% @title = "On Parade" %>
 
-<% @ext_css = add_assets(@ext_css, ["simpleLightbox.min"] ) %>
-<% @ext_js = add_assets(@ext_js, ["simpleLightbox.min"] ) %>
+<% @ext_css = add_assets(@ext_css, ["fancybox.min"] ) %>
+<% @ext_js = add_assets(@ext_js, ["fancybox"] ) %>
+<% @inline_js = ['$(function() {$(".album_gallery .gallery").fancybox();});'] %>
 
 <h1>On Parade</h1>
 
@@ -85,7 +86,3 @@
   </div>
 
 </div>
-
-<script>
-  new SimpleLightbox({elements: '.album_gallery .gallery'});
-</script>
