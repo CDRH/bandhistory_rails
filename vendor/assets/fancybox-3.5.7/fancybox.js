@@ -1945,6 +1945,7 @@
         })
         .addClass("fancybox-image")
         .attr("src", slide.src)
+        .attr("alt", "Full-size image")
         .appendTo(slide.$content);
 
       if ((img.complete || img.readyState == "complete") && $img.naturalWidth && $img.naturalHeight) {
@@ -5126,19 +5127,24 @@
         self.$list = $('<div class="' + CLASS + '__list">').appendTo(self.$grid);
       }
 
+      let image_no = 0
+
       $.each(instance.group, function (i, item) {
         src = item.thumb;
 
         if (!src && item.type === "image") {
           src = item.src;
         }
+        image_no++
 
         list.push(
           '<a href="javascript:;" tabindex="0" data-index="' +
           i +
           '"' +
           (src && src.length ? ' style="background-image:url(' + src + ')"' : 'class="fancybox-thumbs-missing"') +
-          "></a>"
+          '><span class="sr-only">View image '+
+          image_no +
+          '</span></a>'
         );
       });
 
