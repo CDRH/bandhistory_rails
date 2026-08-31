@@ -7,14 +7,14 @@
     <% link = image_url(id: image["identifier"]) %>
 
     <div class="image flex-item">
-      <% label = "#{image["title"]}<br/><a href='#{link}' target='blank' rel='nofollow noopener'>View More Information</a>" %>
+      <% label = "#{image["title"]}<br/><a href='#{link}' rel='nofollow noopener'>View More Information</a>" %>
 
       <% year = image["date"].present? ? image["date"][0,4] : "undated" %>
       <h3><%= image["title"] %> (<%= year %>)</h3>
 
-      <a class="gallery"
+      <a class="gallery" data-caption="<%= label %>"
         href="<%= iiif(image["cover_image"], size: "!800,800") %>"
-        title="<%= label %>">
+        title="<%= image["title"] %>">
         <%= image_tag iiif(image["cover_image"]), class: "thumbnail", alt: image["title"] %>
         <span class="imagecaption">View larger image</span>
       </a>

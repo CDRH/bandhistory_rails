@@ -56,7 +56,7 @@
 
 <div class="album_gallery">
   <% images.each do |image| %>
-    <a class="gallery"
+    <a class="gallery" data-caption="<%= image[:label] %>"
       href="<%= iiif(image[:id], size: "!800,800") %>"
       title="<%= image[:label] %>">
       <%= image_tag iiif(image[:id]), class: "preview", alt: image[:label], "data-image": image[:id] %>
