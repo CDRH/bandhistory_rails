@@ -1,11 +1,11 @@
 <div class="filters">
   <div class="filters-topic">
-    <h3>Filter Images by Topic:</h3>
+    <h3>Filter Group Images by Topic:</h3>
     <div class="filter-buttons">
       <%# if no facet selected, highlight all %>
       <% all_btn = params["topic"].blank? ? "btn-primary" : "btn-warning" %>
       <%= link_to :images, class: "btn btn-filter #{all_btn}" do %>
-        All <span class="badge">X</span>
+        All Images
       <% end %>
       <% @facets.facets["topics"].each do |facet, results| %>
         <% btn_class = topic_selected?(facet) ? "btn-primary" : "btn-info" %>
