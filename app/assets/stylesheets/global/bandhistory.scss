@@ -788,6 +788,11 @@ span.underline {
 // Search
 // ------
 
+
+.searchbox .panel-search-help .panel-heading-link > h2.panel-heading .panel-title {
+  font-family: $font-family-sans-serif;
+}
+
 .searchResults {
   border-bottom: 3px solid $gray-200;
   color: $gray-900; //overwrite link color
