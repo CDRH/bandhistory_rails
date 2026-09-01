@@ -680,10 +680,10 @@ a.btn {
     font-family: 'Cutive', serif;
     font-size: 1em;
     font-weight: 100;
-    padding: .5em .5em .2em .5em;
+    padding: .65em .5em .2em .5em;
     > span {
       font-family: $font-family-sans-serif;
-      margin-left: .2em;
+      margin: -.2em 0 0 .2em;
     }
   }
 }
