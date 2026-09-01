@@ -1,10 +1,7 @@
-<% @ext_css = add_assets(@ext_css, ["simpleLightbox.min"] ) %>
-<% @ext_js = add_assets(@ext_js, ["simpleLightbox.min"] ) %>
+<% @ext_css = add_assets(@ext_css, ["fancybox.min"] ) %>
+<% @ext_js = add_assets(@ext_js, ["fancybox"] ) %>
+<% @inline_js = ['$(function() {$(".main_content .gallery-image").fancybox();});'] %>
 
 <h1><%= sanitize @res["title"] %></h1>
 <%= render_overridable("items", "show_metadata") %>
 <%= render_overridable("items", "show_content") %>
-
-<script>
-  new SimpleLightbox({elements: '.main_content .gallery-image'});
-</script>
