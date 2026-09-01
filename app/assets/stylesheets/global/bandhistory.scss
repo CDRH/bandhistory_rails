@@ -677,6 +677,7 @@ a.btn {
 
 .filter-buttons {
   .btn {
+    border: 2px solid transparent;
     font-family: 'Cutive', serif;
     font-size: 1em;
     font-weight: 100;
@@ -684,6 +685,10 @@ a.btn {
     > span {
       font-family: $font-family-sans-serif;
       margin: -.2em 0 0 .2em;
+    }
+
+    &:hover {
+     border: 2px solid #840000; 
     }
   }
 }
