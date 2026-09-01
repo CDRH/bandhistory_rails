@@ -15,13 +15,12 @@
     <h3>Filter Footage by Topic:</h3>
     <div class="filter-buttons">
       <% all_btn = params["f"].present? ? "btn-warning" : "btn-primary" %>
-      <%= link_to :footage, class: "btn btn-filter #{all_btn}" do %>
-        All <span class="badge">X</span>
-      <% end %>
+      <%= link_to "All Footage", :footage, class: "btn btn-filter #{all_btn}" %>
       <% @facets.facets["keywords"].each do |keyword, results| %>
         <% btn_class = facet_selected?("keywords", keyword) ? "btn-primary" : "btn-info" %>
         <%= link_to footage_path({ "f" => ["keywords|#{keyword}"] }), class: "btn btn-filter #{btn_class}" do %>
-          <%= keyword.titleize %> <span class="badge"><%= results["num"] %></span>
+          <%= keyword.titleize %> <span class="badge"><%= results["num"] %><% if (results["num"] != 1) %><span class="sr-only-clip"> <%= t("search.results.plural", default: "results") %></span><% else %><span class="sr-only-clip">  <%= t("search.results.singular", default: "result") %></span><% end %>
+          </span>
         <% end %>
       <% end %>
     </div>

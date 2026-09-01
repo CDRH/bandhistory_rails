@@ -681,7 +681,7 @@ a.btn {
     font-size: 1em;
     font-weight: 100;
     padding: .5em .5em .2em .5em;
-    span {
+    > span {
       font-family: $font-family-sans-serif;
       margin-left: .2em;
     }
