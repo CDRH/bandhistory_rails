@@ -598,6 +598,11 @@ video {
 .btn-moreinformation {
   background: $gray-800;
   color: #fff;
+
+  &:hover {
+    background: #d00000;
+    color: #fff;
+  }
 }
 
 a.btn {
