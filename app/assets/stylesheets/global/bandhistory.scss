@@ -693,13 +693,13 @@ a.btn {
   border: 4px solid $brand-primary;
 }
 
-.fancybox-caption__body {
+.fancybox-caption .fancybox-caption__body {
   background-color: #fff;
   color: #000;
 
   a, a:link, a:hover, a:visited {
-    text-decoration: underline !important;
-    color: #840000 !important;
+    text-decoration: underline;
+    color: #840000;
   }
 }
 
