@@ -1,7 +1,8 @@
 <% @title = "On Parade" %>
 
-<% @ext_css = add_assets(@ext_css, ["simpleLightbox.min"] ) %>
-<% @ext_js = add_assets(@ext_js, ["simpleLightbox.min"] ) %>
+<% @ext_css = add_assets(@ext_css, ["fancybox.min"] ) %>
+<% @ext_js = add_assets(@ext_js, ["fancybox"] ) %>
+<% @inline_js = ['$(function() {$(".album_gallery .gallery").fancybox();});'] %>
 
 <h1>On Parade</h1>
 
@@ -55,7 +56,7 @@
 
 <div class="album_gallery">
   <% images.each do |image| %>
-    <a class="gallery"
+    <a class="gallery" data-caption="<%= image[:label] %>" data-fancybox="gallery"
       href="<%= iiif(image[:id], size: "!800,800") %>"
       title="<%= image[:label] %>">
       <%= image_tag iiif(image[:id]), class: "preview", alt: image[:label], "data-image": image[:id] %>
@@ -85,7 +86,3 @@
   </div>
 
 </div>
-
-<script>
-  new SimpleLightbox({elements: '.album_gallery .gallery'});
-</script>

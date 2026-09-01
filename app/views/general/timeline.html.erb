@@ -3,8 +3,9 @@
 <h1>Timeline</h1>
 </div><!-- end container div -->
 
-<% @ext_css = add_assets(@ext_css, ["simpleLightbox.min", "timeline"] ) %>
-<% @ext_js = add_assets(@ext_js, ["simpleLightbox.min"] ) %>
+<% @ext_css = add_assets(@ext_css, ["fancybox.min", "timeline"] ) %>
+<% @ext_js = add_assets(@ext_js, ["fancybox"] ) %>
+<% @inline_js = ['$(function() {$(".band-timeline-content .gallery").fancybox();});'] %>
 
 <div class="container-fluid">
     <!-- Vertical Timeline -->
@@ -54,9 +55,3 @@
   <!-- // Vertical Timeline -->
 </div>
 <div><!--restart container div-->
-
-<!-- TODO make a new home for this -->
-<!-- NOTE images are 300 and 800 -->
-<script>
-  new SimpleLightbox({elements: '.band-timeline-content .gallery'});
-</script>
