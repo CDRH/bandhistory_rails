@@ -11,7 +11,7 @@
         <% title += " #{image_attr}" if image_attr %>
         <% title_w_link = title %>
         <% title_w_link += "<br/><a href='#{image_path(id: image_link)}'>View Photo Information</a>" if image_link %>
-        <a class="gallery" data-caption="<%= title_w_link %>"
+        <a class="gallery" data-caption="<%= title_w_link %>" data-fancybox="gallery"
           href="<%= url_for iiif(image, size: "!800,800") %>"
           title="<%= title.gsub('<br/>', ' ') %>">
           <%= image_tag iiif(image, size: "!350,500"), class: "preview", alt: title.gsub('<br/>', ' ') %>
