@@ -4,7 +4,7 @@
 
     <div class="image flex-item">
       <% year = image["date"].present? ? image["date"][0,4] : "undated" %>
-      <% link_to image_path(id: image["identifier"]), class: "gallery" do %>
+      <%= link_to image_path(id: image["identifier"]), class: "gallery" do %>
         <h3><%= image["title"] %> (<%= year %>)</h3>
         <%= image_tag iiif(image["cover_image"]), class: "thumbnail", alt: "", role: "presentation" %>
       <% end %>
