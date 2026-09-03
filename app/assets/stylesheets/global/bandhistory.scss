@@ -509,6 +509,10 @@ a.flex-item {
   border: solid 1px $gray-100;
   background: #fff;
   text-align: center;
+
+  img {
+    border: solid 2px $gray-800;
+  }
   h3 {
     font-size: 1.2em;
   }
@@ -520,6 +524,15 @@ a.flex-item {
   li {
     line-height: 1.1em;
     margin-bottom: .4em;
+  }
+
+  a:hover {
+    h3 {
+      text-decoration: underline;
+    }
+    img {
+      border-color: #840000;
+    }
   }
 }
 
