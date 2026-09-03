@@ -32,47 +32,11 @@
 <div class="videos-container flex-container">
   <% @res.items.each do |item| %>
     <% html_id = item["identifier"].gsub(".", "") %>
-    <button type="button" class="video flex-item" data-toggle="modal" data-target="#<%= html_id %>">
+   <%= link_to footage_clip_path(id: item["identifier"]), class: "video flex-item" do %>
       <h3><%= item["date_display"] %></h3>
-     
-      <%= image_tag iiif(item["cover_image"]), class: "thumbnail" %>
+      <%= image_tag iiif(item["cover_image"]), class: "thumbnail", alt: "", role: "presentation" %>
       <p><%= item["description"] %></p>
-      <%= link_to "More Information", footage_clip_path(id: item["identifier"]), class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
-    </button>
-
-    <!-- Video modal -->
-    <div class="modal fade" id="<%= html_id %>" tabindex="-1" role="dialog"
-      aria-labelledby="<%= html_id %>" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="<%= item["identifier"] %>"><%= item["date_display"] %></h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <video controls preload="none" poster="<%= iiif(item["cover_image"], size: "!500,500") %>">
-              <% video_link = "#{PRIVATE["media_path"]}/video/bandhistory/footage/#{item["identifier"]}.mp4" %>
-              <source src="<%= video_link %>" type="video/mp4">
-              <p>Your browser doesn't support HTML5 video. Here is
-                 a <%= link_to "link to the video", video_link %> instead.</p>
-            </video>
-            <h5>Clip Information</h5>
-            <ul>
-              <li><strong>Source</strong> <%= item["source"] %></li>
-              <li><strong>Description:</strong> <%= item["description"] %></li>
-            </ul>
-
-            <%= link_to "View more information about the footage clip and original reel", footage_clip_path(id: item["identifier"]), class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-filter btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+      <% end %>
   <% end %>
 
 </div>
