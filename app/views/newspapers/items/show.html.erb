@@ -10,11 +10,11 @@
   </div>
 
   <div class="col-md-6">
-    <%= link_to @res["source"],
+    <%= link_to  @res["has_source"]["title"],
         target: "_blank",
         rel: "nofollow noreferrer" do %>
       <p>View article on Nebraska Newspapers website</p>
-      <%= image_tag "no_image_newspaper.jpg", alt: "No image", class: "no-image-newspaper" %>
+      <%= image_tag "no_image_newspaper.jpg", alt: "", role: "presentation"%>
     <% end %>
   </div>
 

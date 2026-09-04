@@ -4,18 +4,20 @@
 <% if @res.present? && @res.count && @res.count > 0 %>
   <div class="flex_row buffer-bottom-sm">
     <% @res.items.each do |item| %>
-      <%= link_to search_item_link(item), class: "searchResults flex_col-md" do %>
+      <div class="searchResults flex_col-md">
         <div class="search_results_image">
           <% if item["cover_image"] %>
-            <%= image_tag iiif(item["cover_image"]), alt: "First page of #{title_label(item)}" %>
+            <%= image_tag iiif(item["cover_image"]), alt: "", role: "presentation" %>
           <% elsif item["category2"] == "Newspaper" %>
-            <%= image_tag "no_image_newspaper.jpg", size: "150", alt: "Generic newspaper image with 'no image' text" %>
+            <%= image_tag "no_image_newspaper.jpg", size: "150", alt: "", role: "presentation" %>
           <% else %>
-            <%= image_tag "no_image.png", size: "150", alt: "'No image' text on black background" %>
+            <%= image_tag "no_image.png", size: "150", alt: "", role: "presentation" %>
           <% end %>
         </div>
         <div class="search_results_info">
-          <span class="link_style"><%= title_label(item) %></span>
+          <%= link_to search_item_link(item), class: "link_style" do %>
+            <%= title_label(item) %></span>
+          <% end %>
           <div class="search_item_info">
             <ul class="search_item_metadata">
               <% if item["date_display"].present? %>
@@ -75,7 +77,7 @@
             <% end %> <%# /item["highlight"].present? %>
           </div> <%# /search_item_info %>
         </div><%# /search_results_info %>
-      <%end%><%# /a searchResults %>
+      </div><%# /a searchResults %>
     <% end %><%# /res.items.each %>
   </div><%# /flex_row %>
 <% end %><%# /if %>
