@@ -1,16 +1,17 @@
 <div class="filters">
   <div class="filters-topic">
-    <h3>Filter Projects by Topic:</h3>
+    <h3>Filter Group Images by Topic:</h3>
     <div class="filter-buttons">
       <%# if no facet selected, highlight all %>
       <% all_btn = params["topic"].blank? ? "btn-primary" : "btn-warning" %>
       <%= link_to :images, class: "btn btn-filter #{all_btn}" do %>
-        All <span class="badge">X</span>
+        All Images
       <% end %>
       <% @facets.facets["topics"].each do |facet, results| %>
         <% btn_class = topic_selected?(facet) ? "btn-primary" : "btn-info" %>
         <%= link_to image_topic_path({ topic: facet.downcase }), class: "btn btn-filter #{btn_class}" do %>
-          <%= facet.titleize %> <span class="badge"><%= results["num"] %></span>
+          <%= facet.titleize %> <span class="badge"><%= results["num"] %><% if (results["num"] != 1) %><span class="sr-only-clip"> <%= t("search.results.plural", default: "results") %></span><% else %><span class="sr-only-clip">  <%= t("search.results.singular", default: "result") %></span><% end %>
+          </span>
         <% end %>
       <% end %>
     </div>

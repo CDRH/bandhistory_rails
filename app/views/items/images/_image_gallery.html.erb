@@ -1,23 +1,13 @@
-<% @ext_css = add_assets(@ext_css, ["fancybox.min", "timeline"] ) %>
-<% @ext_js = add_assets(@ext_js, ["fancybox"] ) %>
-<% @inline_js = ['$(function() {$(".gallery").fancybox();});'] %>
-
 <div class="images-container flex-container">
   <% images.each do |image| %>
     <% link = image_url(id: image["identifier"]) %>
 
     <div class="image flex-item">
-      <% label = "#{image["title"]}<br/><a href='#{link}' rel='nofollow noopener'>View More Information</a>" %>
-
       <% year = image["date"].present? ? image["date"][0,4] : "undated" %>
-      <h3><%= image["title"] %> (<%= year %>)</h3>
-
-      <a class="gallery" data-caption="<%= label %>" data-fancybox="gallery"
-        href="<%= iiif(image["cover_image"], size: "!800,800") %>"
-        title="<%= image["title"] %>">
-        <%= image_tag iiif(image["cover_image"]), class: "thumbnail", alt: image["title"] %>
-        <span class="imagecaption">View larger image</span>
-      </a>
+      <%= link_to image_path(id: image["identifier"]), class: "gallery" do %>
+        <h3><%= image["title"] %> (<%= year %>)</h3>
+        <%= image_tag iiif(image["cover_image"]), class: "thumbnail", alt: "", role: "presentation" %>
+      <% end %>
 
       <ul>
         <% if image["date"].present? %>
@@ -27,8 +17,6 @@
         <li><strong>Collection:</strong> <%= image["source"] %></li>
         <li><strong>ID:</strong> <%= image["identifier"] %></li>
       </ul>
-    
-     <%= link_to "View More Information", link, class: "btn btn-sm btn-secondary btn-block btn-moreinformation" %>
-  </div>
+    </div>
   <% end %>
 </div>

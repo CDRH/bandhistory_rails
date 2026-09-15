@@ -508,6 +508,11 @@ a.flex-item {
   max-width: 25%;
   border: solid 1px $gray-100;
   background: #fff;
+  text-align: center;
+
+  img {
+    border: solid 2px $gray-800;
+  }
   h3 {
     font-size: 1.2em;
   }
@@ -520,8 +525,14 @@ a.flex-item {
     line-height: 1.1em;
     margin-bottom: .4em;
   }
-  &:hover {
-    background-color: $gray-100;
+
+  a:hover {
+    h3 {
+      text-decoration: underline;
+    }
+    img {
+      border-color: #840000;
+    }
   }
 }
 
@@ -598,6 +609,11 @@ video {
 .btn-moreinformation {
   background: $gray-800;
   color: #fff;
+
+  &:hover {
+    background: #d00000;
+    color: #fff;
+  }
 }
 
 a.btn {
@@ -677,13 +693,18 @@ a.btn {
 
 .filter-buttons {
   .btn {
+    border: 2px solid transparent;
     font-family: 'Cutive', serif;
     font-size: 1em;
     font-weight: 100;
-    padding: .5em .5em .2em .5em;
-    span {
+    padding: .65em .5em .2em .5em;
+    > span {
       font-family: $font-family-sans-serif;
-      margin-left: .2em;
+      margin: -.2em 0 0 .2em;
+    }
+
+    &:hover {
+     border: 2px solid #840000; 
     }
   }
 }
@@ -788,6 +809,11 @@ span.underline {
 // Search
 // ------
 
+
+.searchbox .panel-search-help .panel-heading-link > h2.panel-heading .panel-title {
+  font-family: $font-family-sans-serif;
+}
+
 .searchResults {
   border-bottom: 3px solid $gray-200;
   color: $gray-900; //overwrite link color
@@ -795,8 +821,6 @@ span.underline {
   padding: 1em 0 0 0;
   text-decoration: none !important;
   &:hover {
-    background-color: $gray-100;
-    color: $gray-900; //overwrite link color
     .link_style {
       color: $link-hover-color;
     }
@@ -850,7 +874,7 @@ span.underline {
   padding: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
-  border: solid 1px $gray-300;;
+  border: solid 1px $gray-300;
   em {
     background-color: $yellow;
   }
